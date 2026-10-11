@@ -1,0 +1,1298 @@
+[
+  {
+    "case": {
+      "id": "D10",
+      "query": "When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?",
+      "category": "Negation and constraints / recovery-code distractor",
+      "source_pdf_page": 33,
+      "critical_clause": "Generating a new authentication secret SHALL NOT reset the failed authentication count",
+      "source_section": "3.1.3.2",
+      "expected_points": [
+        "Generating a new authentication secret must not reset the failed-authentication count."
+      ],
+      "evaluation_role": "failure_recovery",
+      "selection_note": "Baseline context contains recovery-code rules, omitting the out-of-band failure-counter constraint."
+    },
+    "designated_evidence_ids": [
+      "p033_c02",
+      "p033_c03"
+    ],
+    "baseline_top10": [
+      {
+        "chunk_id": "p059_c03",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous United States \u2022 30 days when sent to a postal address outside of the contiguous United States \u2022 10 minutes when sent via text message or voice \u2022 24 hours when sent to an email address The verification of issued recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. When establishing recovery addresses other than those validated or verified as part of the identity proofing process, the address SHALL be verified. To verify an address, the CSP SHALL send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow",
+        "baseline_rank": 1,
+        "bi_score": 0.5031232833862305
+      },
+      {
+        "chunk_id": "p031_c04",
+        "pdf_page": 31,
+        "printed_page": "20",
+        "token_start": 420,
+        "token_end": 478,
+        "text": "or are issued as recovery codes (see Sec. 4.2.1.2) are not authentication processes and not affected by the above prohibition. The out-of-band authenticator SHALL uniquely authenticate itself in one of the following ways when communicating with the verifier:",
+        "baseline_rank": 2,
+        "bi_score": 0.5028385519981384
+      },
+      {
+        "chunk_id": "p059_c02",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code SHALL include at least six decimal digits (or equivalent) from an approved random bit generator, as described in Sec. 3.2.12. The issued recovery code may be presented as a numeric or a printable ASCII representation (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the recovery code, or a machine-readable optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous",
+        "baseline_rank": 3,
+        "bi_score": 0.45938870310783386
+      },
+      {
+        "chunk_id": "p033_c03",
+        "pdf_page": 33,
+        "printed_page": "22",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "as described in Sec. 3.2.2. Generating a new authentication secret SHALL NOT reset the failed authentication count. Out-of-band verifiers that send a push notification to a subscriber device SHOULD implement a reasonable limit on the rate or total number of push notifications that will be sent since the last successful authentication. For additional verification requirements that are specific to the PSTN, see Sec. 3.1.3.3. 3.1.3.3. Authentication Using the Public Switched Telephone Network Use of the PSTN for out-of-band verification is restricted as described in this section and SHALL satisfy the requirements of Sec. 3.2.9. Setting or changing the pre-registered telephone number is considered to be the binding of a new authenticator and SHALL only occur as described in Sec. 4.1.2. Some subscribers may",
+        "baseline_rank": 4,
+        "bi_score": 0.45497480034828186
+      },
+      {
+        "chunk_id": "p033_c02",
+        "pdf_page": 33,
+        "printed_page": "22",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "the verifier. In all cases, the authentication SHALL be considered invalid unless completed within 10 minutes. Verifiers SHALL accept a given authentication secret as valid only once during the validity period to provide replay resistance, as described in Sec. 3.2.7. The verifier SHALL generate random authentication secrets that are at least six decimal digits (or equivalent) in length using an approved random bit generator as described in Sec. 3.2.12. If the authentication secret is less than 64 bits long, the verifier SHALL implement a rate-limiting mechanism that effectively limits the total number of consecutive failed authentication attempts that can be made on the subscriber account as described in Sec. 3.2.2. Generating a new authentication secret SHALL NOT reset the failed authentication count. Out-of-band verifiers that send a push notification to a",
+        "baseline_rank": 5,
+        "bi_score": 0.45183366537094116
+      },
+      {
+        "chunk_id": "p042_c01",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Requiring the claimant to wait after a failed attempt for a period of time that increases as the subscriber account approaches its maximum allowance for consecutive failed attempts (e.g., 30 seconds up to an hour) \u2022 Leveraging other risk-based or adaptive authentication techniques to identify claimant behaviors that fall within or outside of typical norms (e.g., the use of the claimant\u2019s IP address, geolocation, timing of request patterns, or browser metadata) When the subscriber successfully authenticates, the verifier SHOULD disregard any previous failed attempts for the authenticators used in the successful authentication. Following successful authentication at a given AAL, the verifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the",
+        "baseline_rank": 6,
+        "bi_score": 0.4482584595680237
+      },
+      {
+        "chunk_id": "p060_c01",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 The validity time for recovery codes sent to recovery contacts MAY be extended by 24 hours (e.g., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber. \u2022 Confirmation of the recovery code address MAY also be extended by 24 hours to allow the recovery contact to send the confirmation code to the subscriber for entry. If the CSP supports the use of recovery contacts, the CSP SHALL provide methods for subscribers to view and manage recovery contacts. CSPs SHOULD send a reminder annually to subscribers to review their list of recovery contacts. 4.2.1.4. Repeated Identity Proofing When the subscriber account has been identity-proofed at a minimum of identity assurance level 1 (IAL1), CSPs SHOULD support account recovery by repeating a",
+        "baseline_rank": 7,
+        "bi_score": 0.4459136128425598
+      },
+      {
+        "chunk_id": "p059_c01",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Saved recovery codes are intended to be maintained offline (e.g., printed or written down) and stored securely by the subscriber for future use. The verification of saved recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. Saved recovery codes SHALL be stored in the subscriber account in hashed form using an approved one-way function, as described in Sec. 3.1.1.2. Following the use of a saved recovery code, the CSP SHALL invalidate that recovery code and SHALL issue a new saved recovery code to the subscriber. 4.2.1.2. Issued Recovery Codes CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will",
+        "baseline_rank": 8,
+        "bi_score": 0.43762993812561035
+      },
+      {
+        "chunk_id": "p049_c04",
+        "pdf_page": 49,
+        "printed_page": "38",
+        "token_start": 420,
+        "token_end": 564,
+        "text": "ator to provide an invalid output to the central verifier, the verifier MAY implement this retry-limiting mechanism. Otherwise, retry limiting SHALL be implemented in the authenticator. Once the limit of attempts is reached, the authenticator SHALL be disabled, and a different authenticator SHALL be required for authentication. For authenticators that are usable at AAL3, verification of activation secrets SHALL be performed in a hardware-protected environment (e.g., a secure element, TPM, or TEE). At AAL2, if a hardware-protected environment is not used, the authenticator SHALL use the activation secret to derive a key used to decrypt the authentication key.",
+        "baseline_rank": 9,
+        "bi_score": 0.4312683939933777
+      },
+      {
+        "chunk_id": "p016_c03",
+        "pdf_page": 16,
+        "printed_page": "5",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "requires activation by a second authentication factor 2.1.2. Authenticator and Verifier Requirements Authenticators used at AAL1 SHALL use approved cryptography. In other words, they must use approved algorithms, but the implementation need not be validated under [FIPS140]. Communication between the claimant and verifier SHALL occur via one or more authenticated protected channels. Cryptography used by verifiers operated by or on behalf of federal agencies at AAL1 SHALL be validated to meet the requirements of [FIPS140] Level 1. 2.1.3. Reauthentication These guidelines provide for two types of timeouts, which are further described in Sec. 5.2: 1. An overall timeout limits the duration of an authenticated session to a specified period following authentication or a previous reauthentication.",
+        "baseline_rank": 10,
+        "bi_score": 0.4132804870605469
+      }
+    ],
+    "reranked_top10": [
+      {
+        "chunk_id": "p033_c03",
+        "pdf_page": 33,
+        "printed_page": "22",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "as described in Sec. 3.2.2. Generating a new authentication secret SHALL NOT reset the failed authentication count. Out-of-band verifiers that send a push notification to a subscriber device SHOULD implement a reasonable limit on the rate or total number of push notifications that will be sent since the last successful authentication. For additional verification requirements that are specific to the PSTN, see Sec. 3.1.3.3. 3.1.3.3. Authentication Using the Public Switched Telephone Network Use of the PSTN for out-of-band verification is restricted as described in this section and SHALL satisfy the requirements of Sec. 3.2.9. Setting or changing the pre-registered telephone number is considered to be the binding of a new authenticator and SHALL only occur as described in Sec. 4.1.2. Some subscribers may",
+        "baseline_rank": 4,
+        "bi_score": 0.45497480034828186,
+        "cross_score": -0.026329629123210907,
+        "reranked_rank": 1
+      },
+      {
+        "chunk_id": "p033_c02",
+        "pdf_page": 33,
+        "printed_page": "22",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "the verifier. In all cases, the authentication SHALL be considered invalid unless completed within 10 minutes. Verifiers SHALL accept a given authentication secret as valid only once during the validity period to provide replay resistance, as described in Sec. 3.2.7. The verifier SHALL generate random authentication secrets that are at least six decimal digits (or equivalent) in length using an approved random bit generator as described in Sec. 3.2.12. If the authentication secret is less than 64 bits long, the verifier SHALL implement a rate-limiting mechanism that effectively limits the total number of consecutive failed authentication attempts that can be made on the subscriber account as described in Sec. 3.2.2. Generating a new authentication secret SHALL NOT reset the failed authentication count. Out-of-band verifiers that send a push notification to a",
+        "baseline_rank": 5,
+        "bi_score": 0.45183366537094116,
+        "cross_score": -2.827796459197998,
+        "reranked_rank": 2
+      },
+      {
+        "chunk_id": "p031_c04",
+        "pdf_page": 31,
+        "printed_page": "20",
+        "token_start": 420,
+        "token_end": 478,
+        "text": "or are issued as recovery codes (see Sec. 4.2.1.2) are not authentication processes and not affected by the above prohibition. The out-of-band authenticator SHALL uniquely authenticate itself in one of the following ways when communicating with the verifier:",
+        "baseline_rank": 2,
+        "bi_score": 0.5028385519981384,
+        "cross_score": -2.8776469230651855,
+        "reranked_rank": 3
+      },
+      {
+        "chunk_id": "p042_c01",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Requiring the claimant to wait after a failed attempt for a period of time that increases as the subscriber account approaches its maximum allowance for consecutive failed attempts (e.g., 30 seconds up to an hour) \u2022 Leveraging other risk-based or adaptive authentication techniques to identify claimant behaviors that fall within or outside of typical norms (e.g., the use of the claimant\u2019s IP address, geolocation, timing of request patterns, or browser metadata) When the subscriber successfully authenticates, the verifier SHOULD disregard any previous failed attempts for the authenticators used in the successful authentication. Following successful authentication at a given AAL, the verifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the",
+        "baseline_rank": 6,
+        "bi_score": 0.4482584595680237,
+        "cross_score": -4.532750129699707,
+        "reranked_rank": 4
+      },
+      {
+        "chunk_id": "p059_c03",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous United States \u2022 30 days when sent to a postal address outside of the contiguous United States \u2022 10 minutes when sent via text message or voice \u2022 24 hours when sent to an email address The verification of issued recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. When establishing recovery addresses other than those validated or verified as part of the identity proofing process, the address SHALL be verified. To verify an address, the CSP SHALL send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow",
+        "baseline_rank": 1,
+        "bi_score": 0.5031232833862305,
+        "cross_score": -9.339052200317383,
+        "reranked_rank": 5
+      },
+      {
+        "chunk_id": "p049_c04",
+        "pdf_page": 49,
+        "printed_page": "38",
+        "token_start": 420,
+        "token_end": 564,
+        "text": "ator to provide an invalid output to the central verifier, the verifier MAY implement this retry-limiting mechanism. Otherwise, retry limiting SHALL be implemented in the authenticator. Once the limit of attempts is reached, the authenticator SHALL be disabled, and a different authenticator SHALL be required for authentication. For authenticators that are usable at AAL3, verification of activation secrets SHALL be performed in a hardware-protected environment (e.g., a secure element, TPM, or TEE). At AAL2, if a hardware-protected environment is not used, the authenticator SHALL use the activation secret to derive a key used to decrypt the authentication key.",
+        "baseline_rank": 9,
+        "bi_score": 0.4312683939933777,
+        "cross_score": -9.543370246887207,
+        "reranked_rank": 6
+      },
+      {
+        "chunk_id": "p059_c01",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Saved recovery codes are intended to be maintained offline (e.g., printed or written down) and stored securely by the subscriber for future use. The verification of saved recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. Saved recovery codes SHALL be stored in the subscriber account in hashed form using an approved one-way function, as described in Sec. 3.1.1.2. Following the use of a saved recovery code, the CSP SHALL invalidate that recovery code and SHALL issue a new saved recovery code to the subscriber. 4.2.1.2. Issued Recovery Codes CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will",
+        "baseline_rank": 8,
+        "bi_score": 0.43762993812561035,
+        "cross_score": -9.855781555175781,
+        "reranked_rank": 7
+      },
+      {
+        "chunk_id": "p059_c02",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code SHALL include at least six decimal digits (or equivalent) from an approved random bit generator, as described in Sec. 3.2.12. The issued recovery code may be presented as a numeric or a printable ASCII representation (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the recovery code, or a machine-readable optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous",
+        "baseline_rank": 3,
+        "bi_score": 0.45938870310783386,
+        "cross_score": -10.451377868652344,
+        "reranked_rank": 8
+      },
+      {
+        "chunk_id": "p060_c01",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 The validity time for recovery codes sent to recovery contacts MAY be extended by 24 hours (e.g., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber. \u2022 Confirmation of the recovery code address MAY also be extended by 24 hours to allow the recovery contact to send the confirmation code to the subscriber for entry. If the CSP supports the use of recovery contacts, the CSP SHALL provide methods for subscribers to view and manage recovery contacts. CSPs SHOULD send a reminder annually to subscribers to review their list of recovery contacts. 4.2.1.4. Repeated Identity Proofing When the subscriber account has been identity-proofed at a minimum of identity assurance level 1 (IAL1), CSPs SHOULD support account recovery by repeating a",
+        "baseline_rank": 7,
+        "bi_score": 0.4459136128425598,
+        "cross_score": -10.579178810119629,
+        "reranked_rank": 9
+      },
+      {
+        "chunk_id": "p016_c03",
+        "pdf_page": 16,
+        "printed_page": "5",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "requires activation by a second authentication factor 2.1.2. Authenticator and Verifier Requirements Authenticators used at AAL1 SHALL use approved cryptography. In other words, they must use approved algorithms, but the implementation need not be validated under [FIPS140]. Communication between the claimant and verifier SHALL occur via one or more authenticated protected channels. Cryptography used by verifiers operated by or on behalf of federal agencies at AAL1 SHALL be validated to meet the requirements of [FIPS140] Level 1. 2.1.3. Reauthentication These guidelines provide for two types of timeouts, which are further described in Sec. 5.2: 1. An overall timeout limits the duration of an authenticated session to a specified period following authentication or a previous reauthentication.",
+        "baseline_rank": 10,
+        "bi_score": 0.4132804870605469,
+        "cross_score": -11.164108276367188,
+        "reranked_rank": 10
+      }
+    ],
+    "baseline_top3_ids": [
+      "p059_c03",
+      "p031_c04",
+      "p059_c02"
+    ],
+    "reranked_top3_ids": [
+      "p033_c03",
+      "p033_c02",
+      "p031_c04"
+    ],
+    "evidence_baseline_rank": 4,
+    "evidence_reranked_rank": 1,
+    "tracked_evidence_chunk_id": "p033_c03",
+    "best_original_evidence_rank": 4,
+    "designated_clause_recovered": true,
+    "single_pass_baseline_ms": 6.652875017607585,
+    "single_pass_rerank_ms": 249.94483301998116
+  },
+  {
+    "case": {
+      "id": "D28",
+      "query": "Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?",
+      "category": "Document-specific permission / biometric distractor",
+      "source_pdf_page": 45,
+      "critical_clause": "with explicit subscriber consent",
+      "source_section": "3.2.3.4",
+      "expected_points": [
+        "Local template adaptation is allowed; other research purposes require explicit subscriber consent."
+      ],
+      "evaluation_role": "failure_recovery",
+      "selection_note": "Baseline context discusses facial-image capture and biometric security but omits the sample-reuse permission and consent condition."
+    },
+    "designated_evidence_ids": [
+      "p045_c01"
+    ],
+    "baseline_top10": [
+      {
+        "chunk_id": "p043_c01",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Biometric template protection schemes provide a method for revoking biometric characteristics that are comparable to other authentication factors (e.g., PKI certificates, passwords). However, the availability of such solutions is limited. \u2022 Biometric characteristics do not constitute secrets. They can often be obtained online or otherwise without consent. A facial image can be obtained by taking a picture; latent fingerprints can be obtained from objects someone touches; and iris patterns can be captured with high-resolution cameras. While presentation attack detection (PAD) technologies can mitigate the risks of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7",
+        "baseline_rank": 1,
+        "bi_score": 0.4981239140033722
+      },
+      {
+        "chunk_id": "p089_c01",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Fingerprint usability considerations: \u2013 Users have to remember which fingers they used for initial enrollment. \u2013 The amount of moisture on the finger affects the sensor\u2019s ability for successful capture. \u2013 Additional factors that influence fingerprint capture quality include age, sex, and occupation (e.g., users who handle chemicals or work extensively with their hands may have degraded friction ridges). \u2022 Facial comparison usability considerations: \u2013 Users have to remember whether they wore any artifacts (e.g., glasses) during enrollment, which affects facial recognition accuracy. \u2013 Differences in environmental lighting conditions may affect facial recognition accuracy. \u2013 Facial expressions affect facial recognition accuracy (e.g., smiling versus a neutral expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition",
+        "baseline_rank": 2,
+        "bi_score": 0.4851643443107605
+      },
+      {
+        "chunk_id": "p044_c04",
+        "pdf_page": 44,
+        "printed_page": "33",
+        "token_start": 420,
+        "token_end": 508,
+        "text": "the above requirements. If the comparison is performed centrally: \u2022 The sensor or endpoint SHALL be authenticated before capturing the biometric sample from the claimant. The verifier MAY limit the use of the centrally stored biometric template to particular sensors or sensor classes (e.g., sensor manufacturers or models). \u2022 Appropriate controls (e.g., encryption and access controls) for sensitive personal information SHALL be implemented.",
+        "baseline_rank": 3,
+        "bi_score": 0.4580303132534027
+      },
+      {
+        "chunk_id": "p048_c02",
+        "pdf_page": 48,
+        "printed_page": "37",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "g., a claimant entering an authenticator output from an OTP authenticator). Cryptographic authenticators that require claimant action for each authentication or reauthentication operation can also be used to establish intent (e.g., by pushing a button or reinsertion). The presentation of biometric characteristics does not always establish authentication intent. For example, using a front-facing camera on a mobile phone to capture a face biometric does not necessarily constitute intent, as it can be reasonably expected to capture a face image while the device is used for other non-authentication purposes. In these scenarios, an explicit mechanism (e.g., tapping a software or physical button) SHALL be provided to establish authentication intent. 3.2.9. Restricted Authenticators As threats evolve, authenticators\u2019 ability to resist attacks typically degrades. Conversely, the performance of",
+        "baseline_rank": 4,
+        "bi_score": 0.4411641061306
+      },
+      {
+        "chunk_id": "p045_c01",
+        "pdf_page": 45,
+        "printed_page": "34",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An authenticated protected channel between the sensor (or an endpoint containing a sensor that resists sensor replacement) and the verifier SHALL be established. All transmission of biometric information SHALL be conducted over that authenticated protected channel. 3.2.3.4. Use of Biometric Samples Biometric samples collected in the authentication process MAY be used locally within the authenticator or verifier performing the biometric comparison to update the templates for the purpose of compensating for changes in subscriber characteristics or \u2014 with explicit subscriber consent \u2014 other research purposes. The biometric samples and any other biometric data derived from them SHALL be erased immediately after any adaptation or research data has been derived. A limit on the allowable time for adaptation SHALL be established and enforced by the authenticator or the CSP . 3.2.4. Attestation",
+        "baseline_rank": 5,
+        "bi_score": 0.437000036239624
+      },
+      {
+        "chunk_id": "p061_c02",
+        "pdf_page": 61,
+        "printed_page": "50",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "a successful biometric comparison against the biometric characteristic collected during an initial on-site attended identity proofing session, as described in [SP800-63A]. The CSP MAY also require the presentation of the evidence used in the initial identity proofing process. 4.2.3. Account Recovery Notification In all cases, account recovery SHALL cause a notification to be sent to the subscriber or their designee, as described in Sec. 4.6. 4.3. Loss, Theft, Damage, and Compromise Compromised authenticators include those that have been lost, stolen, or subject to unauthorized duplication or that have activation factors that are no longer in the subscriber\u2019s control. Generally, one must assume that a lost authenticator has been stolen or compromised by someone other than the legitimate holder of the authenticator. Damaged or malfunctioning authenticators are",
+        "baseline_rank": 6,
+        "bi_score": 0.42890751361846924
+      },
+      {
+        "chunk_id": "p087_c03",
+        "pdf_page": 87,
+        "printed_page": "76",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "1.4. Usability Considerations for Biometrics This section provides a high-level overview of general usability considerations for biometrics. A more detailed discussion of biometric usability can be found in Usability & Biometrics, Ensuring Successful Biometric Systems [UsabilityBiometrics]. User familiarity and practice with the device improve performance for all modalities. Device affordances (i.e., properties of a device that allow a user to perform an action), feedback, and clear instructions are critical to a user\u2019s success with the biometric device. For example, provide clear instructions on the required actions for liveness detection. Ideally, users can select the modality that they are most comfortable with for their second authentication factor. Various user populations may be more comfortable, familiar with, and accepting of some biometric modalities than others. Provide meaningful feedback",
+        "baseline_rank": 7,
+        "bi_score": 0.418460875749588
+      },
+      {
+        "chunk_id": "p089_c02",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 140,
+        "token_end": 310,
+        "text": "expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition accuracy. \u2013 Users who have had eye surgery may need to re-enroll after surgery. \u2013 Differences in environmental lighting conditions may affect iris recognition accuracy, especially for certain iris colors. Intermittent Events Since biometrics are only permitted as a second factor for multi-factor authentication, usability considerations for intermittent events with the primary factor still apply. Intermittent events that may affect recognition accuracy using biometrics include: \u2022 Degraded fingerprints or finger injuries \u2022 Dirty, dry, or wet hands \u2022 Wearing gloves or a mask \u2022 Natural facial or weight changes over time \u2022 Eye surgery Across all biometric modalities, usability considerations for intermittent events include the following:",
+        "baseline_rank": 8,
+        "bi_score": 0.4057369828224182
+      },
+      {
+        "chunk_id": "p042_c02",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "rifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the session from which it is being reset. If the subscriber cannot authenticate at the required AAL, the account recovery procedures in Sec. 4.2 SHALL be used. 3.2.3. Use of Biometrics Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics, such as fingerprints, voice patterns, facial features, keystroke patterns, angle of holding a smart phone, screen pressure, typing speed, mouse movements, or gait. Such characteristics have multiple modalities that may differ in the extent to which they establish authentication intent, as described in Sec. 3.2.8. Biometric comparisons are based on a measurement from the",
+        "baseline_rank": 9,
+        "bi_score": 0.40417927503585815
+      },
+      {
+        "chunk_id": "p061_c01",
+        "pdf_page": 61,
+        "printed_page": "50",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 One recovery code from the set (i.e., saved, issued, and recovery contacts) plus authentication with a single-factor authenticator that is bound to the subscriber account \u2022 Repeated identity proofing (provided that the subscriber account has been identity-proofed) 4.2.2.3. Recovery at AAL3 If an account that can authenticate at AAL3 has been identity-proofed at IAL1 or IAL2, the requirements are the same as those for recovery at AAL2. If an account that can authenticate at AAL3 has been identity-proofed at IAL3, the CSP SHALL successfully perform a successful biometric comparison against the biometric characteristic collected during an initial on-site attended identity proofing session, as described in [SP800-63A]. The CSP MAY also",
+        "baseline_rank": 10,
+        "bi_score": 0.39560580253601074
+      }
+    ],
+    "reranked_top10": [
+      {
+        "chunk_id": "p043_c01",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Biometric template protection schemes provide a method for revoking biometric characteristics that are comparable to other authentication factors (e.g., PKI certificates, passwords). However, the availability of such solutions is limited. \u2022 Biometric characteristics do not constitute secrets. They can often be obtained online or otherwise without consent. A facial image can be obtained by taking a picture; latent fingerprints can be obtained from objects someone touches; and iris patterns can be captured with high-resolution cameras. While presentation attack detection (PAD) technologies can mitigate the risks of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7",
+        "baseline_rank": 1,
+        "bi_score": 0.4981239140033722,
+        "cross_score": -2.960383892059326,
+        "reranked_rank": 1
+      },
+      {
+        "chunk_id": "p045_c01",
+        "pdf_page": 45,
+        "printed_page": "34",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An authenticated protected channel between the sensor (or an endpoint containing a sensor that resists sensor replacement) and the verifier SHALL be established. All transmission of biometric information SHALL be conducted over that authenticated protected channel. 3.2.3.4. Use of Biometric Samples Biometric samples collected in the authentication process MAY be used locally within the authenticator or verifier performing the biometric comparison to update the templates for the purpose of compensating for changes in subscriber characteristics or \u2014 with explicit subscriber consent \u2014 other research purposes. The biometric samples and any other biometric data derived from them SHALL be erased immediately after any adaptation or research data has been derived. A limit on the allowable time for adaptation SHALL be established and enforced by the authenticator or the CSP . 3.2.4. Attestation",
+        "baseline_rank": 5,
+        "bi_score": 0.437000036239624,
+        "cross_score": -4.382184982299805,
+        "reranked_rank": 2
+      },
+      {
+        "chunk_id": "p044_c04",
+        "pdf_page": 44,
+        "printed_page": "33",
+        "token_start": 420,
+        "token_end": 508,
+        "text": "the above requirements. If the comparison is performed centrally: \u2022 The sensor or endpoint SHALL be authenticated before capturing the biometric sample from the claimant. The verifier MAY limit the use of the centrally stored biometric template to particular sensors or sensor classes (e.g., sensor manufacturers or models). \u2022 Appropriate controls (e.g., encryption and access controls) for sensitive personal information SHALL be implemented.",
+        "baseline_rank": 3,
+        "bi_score": 0.4580303132534027,
+        "cross_score": -7.257058143615723,
+        "reranked_rank": 3
+      },
+      {
+        "chunk_id": "p048_c02",
+        "pdf_page": 48,
+        "printed_page": "37",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "g., a claimant entering an authenticator output from an OTP authenticator). Cryptographic authenticators that require claimant action for each authentication or reauthentication operation can also be used to establish intent (e.g., by pushing a button or reinsertion). The presentation of biometric characteristics does not always establish authentication intent. For example, using a front-facing camera on a mobile phone to capture a face biometric does not necessarily constitute intent, as it can be reasonably expected to capture a face image while the device is used for other non-authentication purposes. In these scenarios, an explicit mechanism (e.g., tapping a software or physical button) SHALL be provided to establish authentication intent. 3.2.9. Restricted Authenticators As threats evolve, authenticators\u2019 ability to resist attacks typically degrades. Conversely, the performance of",
+        "baseline_rank": 4,
+        "bi_score": 0.4411641061306,
+        "cross_score": -8.394021987915039,
+        "reranked_rank": 4
+      },
+      {
+        "chunk_id": "p061_c02",
+        "pdf_page": 61,
+        "printed_page": "50",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "a successful biometric comparison against the biometric characteristic collected during an initial on-site attended identity proofing session, as described in [SP800-63A]. The CSP MAY also require the presentation of the evidence used in the initial identity proofing process. 4.2.3. Account Recovery Notification In all cases, account recovery SHALL cause a notification to be sent to the subscriber or their designee, as described in Sec. 4.6. 4.3. Loss, Theft, Damage, and Compromise Compromised authenticators include those that have been lost, stolen, or subject to unauthorized duplication or that have activation factors that are no longer in the subscriber\u2019s control. Generally, one must assume that a lost authenticator has been stolen or compromised by someone other than the legitimate holder of the authenticator. Damaged or malfunctioning authenticators are",
+        "baseline_rank": 6,
+        "bi_score": 0.42890751361846924,
+        "cross_score": -8.473907470703125,
+        "reranked_rank": 5
+      },
+      {
+        "chunk_id": "p061_c01",
+        "pdf_page": 61,
+        "printed_page": "50",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 One recovery code from the set (i.e., saved, issued, and recovery contacts) plus authentication with a single-factor authenticator that is bound to the subscriber account \u2022 Repeated identity proofing (provided that the subscriber account has been identity-proofed) 4.2.2.3. Recovery at AAL3 If an account that can authenticate at AAL3 has been identity-proofed at IAL1 or IAL2, the requirements are the same as those for recovery at AAL2. If an account that can authenticate at AAL3 has been identity-proofed at IAL3, the CSP SHALL successfully perform a successful biometric comparison against the biometric characteristic collected during an initial on-site attended identity proofing session, as described in [SP800-63A]. The CSP MAY also",
+        "baseline_rank": 10,
+        "bi_score": 0.39560580253601074,
+        "cross_score": -9.827579498291016,
+        "reranked_rank": 6
+      },
+      {
+        "chunk_id": "p089_c02",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 140,
+        "token_end": 310,
+        "text": "expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition accuracy. \u2013 Users who have had eye surgery may need to re-enroll after surgery. \u2013 Differences in environmental lighting conditions may affect iris recognition accuracy, especially for certain iris colors. Intermittent Events Since biometrics are only permitted as a second factor for multi-factor authentication, usability considerations for intermittent events with the primary factor still apply. Intermittent events that may affect recognition accuracy using biometrics include: \u2022 Degraded fingerprints or finger injuries \u2022 Dirty, dry, or wet hands \u2022 Wearing gloves or a mask \u2022 Natural facial or weight changes over time \u2022 Eye surgery Across all biometric modalities, usability considerations for intermittent events include the following:",
+        "baseline_rank": 8,
+        "bi_score": 0.4057369828224182,
+        "cross_score": -10.211362838745117,
+        "reranked_rank": 7
+      },
+      {
+        "chunk_id": "p089_c01",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Fingerprint usability considerations: \u2013 Users have to remember which fingers they used for initial enrollment. \u2013 The amount of moisture on the finger affects the sensor\u2019s ability for successful capture. \u2013 Additional factors that influence fingerprint capture quality include age, sex, and occupation (e.g., users who handle chemicals or work extensively with their hands may have degraded friction ridges). \u2022 Facial comparison usability considerations: \u2013 Users have to remember whether they wore any artifacts (e.g., glasses) during enrollment, which affects facial recognition accuracy. \u2013 Differences in environmental lighting conditions may affect facial recognition accuracy. \u2013 Facial expressions affect facial recognition accuracy (e.g., smiling versus a neutral expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition",
+        "baseline_rank": 2,
+        "bi_score": 0.4851643443107605,
+        "cross_score": -10.306463241577148,
+        "reranked_rank": 8
+      },
+      {
+        "chunk_id": "p042_c02",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "rifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the session from which it is being reset. If the subscriber cannot authenticate at the required AAL, the account recovery procedures in Sec. 4.2 SHALL be used. 3.2.3. Use of Biometrics Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics, such as fingerprints, voice patterns, facial features, keystroke patterns, angle of holding a smart phone, screen pressure, typing speed, mouse movements, or gait. Such characteristics have multiple modalities that may differ in the extent to which they establish authentication intent, as described in Sec. 3.2.8. Biometric comparisons are based on a measurement from the",
+        "baseline_rank": 9,
+        "bi_score": 0.40417927503585815,
+        "cross_score": -10.434013366699219,
+        "reranked_rank": 9
+      },
+      {
+        "chunk_id": "p087_c03",
+        "pdf_page": 87,
+        "printed_page": "76",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "1.4. Usability Considerations for Biometrics This section provides a high-level overview of general usability considerations for biometrics. A more detailed discussion of biometric usability can be found in Usability & Biometrics, Ensuring Successful Biometric Systems [UsabilityBiometrics]. User familiarity and practice with the device improve performance for all modalities. Device affordances (i.e., properties of a device that allow a user to perform an action), feedback, and clear instructions are critical to a user\u2019s success with the biometric device. For example, provide clear instructions on the required actions for liveness detection. Ideally, users can select the modality that they are most comfortable with for their second authentication factor. Various user populations may be more comfortable, familiar with, and accepting of some biometric modalities than others. Provide meaningful feedback",
+        "baseline_rank": 7,
+        "bi_score": 0.418460875749588,
+        "cross_score": -10.705694198608398,
+        "reranked_rank": 10
+      }
+    ],
+    "baseline_top3_ids": [
+      "p043_c01",
+      "p089_c01",
+      "p044_c04"
+    ],
+    "reranked_top3_ids": [
+      "p043_c01",
+      "p045_c01",
+      "p044_c04"
+    ],
+    "evidence_baseline_rank": 5,
+    "evidence_reranked_rank": 2,
+    "tracked_evidence_chunk_id": "p045_c01",
+    "best_original_evidence_rank": 5,
+    "designated_clause_recovered": true,
+    "single_pass_baseline_ms": 4.762832977576181,
+    "single_pass_rerank_ms": 151.7215829808265
+  },
+  {
+    "case": {
+      "id": "D34",
+      "query": "If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?",
+      "category": "Exceptions and corner cases / notification vs code delivery",
+      "source_pdf_page": 63,
+      "critical_clause": "only other notification address in the subscriber account is the address to which an issued recovery code was sent",
+      "source_section": "4.6",
+      "expected_points": [
+        "No; an account-recovery notice must also be sent to a postal address in this case."
+      ],
+      "evaluation_role": "failure_recovery",
+      "selection_note": "Baseline context discusses delivery/validity of recovery codes, omitting the separate postal-notification exception."
+    },
+    "designated_evidence_ids": [
+      "p063_c02"
+    ],
+    "baseline_top10": [
+      {
+        "chunk_id": "p059_c03",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous United States \u2022 30 days when sent to a postal address outside of the contiguous United States \u2022 10 minutes when sent via text message or voice \u2022 24 hours when sent to an email address The verification of issued recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. When establishing recovery addresses other than those validated or verified as part of the identity proofing process, the address SHALL be verified. To verify an address, the CSP SHALL send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow",
+        "baseline_rank": 1,
+        "bi_score": 0.6307204961776733
+      },
+      {
+        "chunk_id": "p059_c02",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code SHALL include at least six decimal digits (or equivalent) from an approved random bit generator, as described in Sec. 3.2.12. The issued recovery code may be presented as a numeric or a printable ASCII representation (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the recovery code, or a machine-readable optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous",
+        "baseline_rank": 2,
+        "bi_score": 0.6264193058013916
+      },
+      {
+        "chunk_id": "p060_c01",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 The validity time for recovery codes sent to recovery contacts MAY be extended by 24 hours (e.g., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber. \u2022 Confirmation of the recovery code address MAY also be extended by 24 hours to allow the recovery contact to send the confirmation code to the subscriber for entry. If the CSP supports the use of recovery contacts, the CSP SHALL provide methods for subscribers to view and manage recovery contacts. CSPs SHOULD send a reminder annually to subscribers to review their list of recovery contacts. 4.2.1.4. Repeated Identity Proofing When the subscriber account has been identity-proofed at a minimum of identity assurance level 1 (IAL1), CSPs SHOULD support account recovery by repeating a",
+        "baseline_rank": 3,
+        "bi_score": 0.5859062671661377
+      },
+      {
+        "chunk_id": "p059_c01",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Saved recovery codes are intended to be maintained offline (e.g., printed or written down) and stored securely by the subscriber for future use. The verification of saved recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. Saved recovery codes SHALL be stored in the subscriber account in hashed form using an approved one-way function, as described in Sec. 3.1.1.2. Following the use of a saved recovery code, the CSP SHALL invalidate that recovery code and SHALL issue a new saved recovery code to the subscriber. 4.2.1.2. Issued Recovery Codes CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will",
+        "baseline_rank": 4,
+        "bi_score": 0.5849270224571228
+      },
+      {
+        "chunk_id": "p059_c04",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 420,
+        "token_end": 531,
+        "text": "the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow the subscriber to establish at least two recovery addresses. 4.2.1.3. Recovery Contacts CSPs that support the use of recovery contacts SHALL allow the subscriber to specify one or more addresses of trusted associates to receive issued recovery codes. The requirements for recovery contacts are very similar to those for issued recovery codes with the following exceptions:",
+        "baseline_rank": 5,
+        "bi_score": 0.5805872082710266
+      },
+      {
+        "chunk_id": "p063_c02",
+        "pdf_page": 63,
+        "printed_page": "52",
+        "token_start": 140,
+        "token_end": 309,
+        "text": "or higher (or at AAL1 if that is the highest AAL available for the subscriber account) to update their notification addresses. The CSP SHOULD encourage the subscriber to maintain multiple notification addresses to improve the likelihood of contacting them if a contact address changes. Notifications SHALL be sent to all notification addresses except postal addresses. However, notifications SHALL be sent to postal addresses if no other form of notification address is stored in the subscriber account or if the notification is for account recovery at AAL3. Account recovery notifications SHALL also be sent to a postal address if the only other notification address in the subscriber account is the address to which an issued recovery code was sent. The notification SHALL provide clear instructions, including contact information, in case the recipient repudiates the event associated with the notification.",
+        "baseline_rank": 6,
+        "bi_score": 0.5716339945793152
+      },
+      {
+        "chunk_id": "p058_c04",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 420,
+        "token_end": 483,
+        "text": "-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber MAY request a replacement recovery code. The issuance of a replacement recovery code SHALL result in an account recovery notification, as described in Sec. 4.6.",
+        "baseline_rank": 7,
+        "bi_score": 0.5296538472175598
+      },
+      {
+        "chunk_id": "p058_c03",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "CSPs SHALL support one or more of these and MAY support an application-specific method (e.g., interaction with a CSP agent) to recover a subscriber account. The use of alternative methods SHALL be based on a risk analysis and documented by the CSP . 4.2.1.1. Saved Recovery Codes At enrollment, a CSP that supports this recovery option SHOULD issue a recovery code to the subscriber. The recovery code SHALL include at least 64 bits from an approved random bit generator. The saved recovery code may be presented as numeric or a printable ASCII representation (e.g., Base64) for manual entry or as a machine-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber MAY request a replacement recovery code. The iss",
+        "baseline_rank": 8,
+        "bi_score": 0.49000805616378784
+      },
+      {
+        "chunk_id": "p058_c01",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "4.2. Account Recovery Account recovery is when a subscriber recovers from losing control of the authenticators that are needed to authenticate at a desired AAL. This may be accomplished by repeating portions of the identity proofing process, using a prearranged recovery contact, or presenting one or more recovery codes, perhaps in conjunction with using an authenticator that is still available to the subscriber bound to their subscriber account. Once this is completed, the subscriber can bind one or more new authenticators to their subscriber account. An account recovery event always causes one or more notifications to be sent to the subscriber to help detect the fraudulent use of account recovery. Account recovery differs from authentication in several ways. Since account recovery is expected to be invoked infrequently, it is generally less convenient than authentication and \u2014 depending on the situation",
+        "baseline_rank": 9,
+        "bi_score": 0.4260965883731842
+      },
+      {
+        "chunk_id": "p060_c03",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "SP800-63A]. 4.2.2. Recovery Requirements by IAL/AAL Different recovery methods apply, depending on the IAL and the maximum AAL associated with the subscriber account. 4.2.2.1. Recovery Without Identity Proofing When subscribers have not been identity-proofed, a reproofing option is not available to support account recovery. The recovery of such subscriber accounts SHALL require the successful use of a saved recovery code, issued recovery code, or recovery contact. Since identity proofing requires issuing authenticators that are sufficient for multi-factor authentication to allow the subscriber to access personal information about themselves, subscriber accounts that can authenticate at a maximum of AAL1 are without identity proofing. 4.2.2.2. Recovery at AAL2 To recover an account that can authenticate",
+        "baseline_rank": 10,
+        "bi_score": 0.4208000600337982
+      }
+    ],
+    "reranked_top10": [
+      {
+        "chunk_id": "p063_c02",
+        "pdf_page": 63,
+        "printed_page": "52",
+        "token_start": 140,
+        "token_end": 309,
+        "text": "or higher (or at AAL1 if that is the highest AAL available for the subscriber account) to update their notification addresses. The CSP SHOULD encourage the subscriber to maintain multiple notification addresses to improve the likelihood of contacting them if a contact address changes. Notifications SHALL be sent to all notification addresses except postal addresses. However, notifications SHALL be sent to postal addresses if no other form of notification address is stored in the subscriber account or if the notification is for account recovery at AAL3. Account recovery notifications SHALL also be sent to a postal address if the only other notification address in the subscriber account is the address to which an issued recovery code was sent. The notification SHALL provide clear instructions, including contact information, in case the recipient repudiates the event associated with the notification.",
+        "baseline_rank": 6,
+        "bi_score": 0.5716339945793152,
+        "cross_score": 6.071264266967773,
+        "reranked_rank": 1
+      },
+      {
+        "chunk_id": "p059_c02",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will be sent to a claimant-chosen address. The issued recovery code SHALL include at least six decimal digits (or equivalent) from an approved random bit generator, as described in Sec. 3.2.12. The issued recovery code may be presented as a numeric or a printable ASCII representation (e.g., Base64) for manual entry, a secure (e.g., https) link with a representation of the recovery code, or a machine-readable optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous",
+        "baseline_rank": 2,
+        "bi_score": 0.6264193058013916,
+        "cross_score": 2.5861690044403076,
+        "reranked_rank": 2
+      },
+      {
+        "chunk_id": "p059_c03",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "optical label (e.g., QR code) that contains the recovery code. Issued recovery codes SHALL be valid for at most: \u2022 21 days when sent to a postal address within the contiguous United States \u2022 30 days when sent to a postal address outside of the contiguous United States \u2022 10 minutes when sent via text message or voice \u2022 24 hours when sent to an email address The verification of issued recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. When establishing recovery addresses other than those validated or verified as part of the identity proofing process, the address SHALL be verified. To verify an address, the CSP SHALL send a confirmation code with the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow",
+        "baseline_rank": 1,
+        "bi_score": 0.6307204961776733,
+        "cross_score": 1.7752487659454346,
+        "reranked_rank": 3
+      },
+      {
+        "chunk_id": "p060_c01",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 The validity time for recovery codes sent to recovery contacts MAY be extended by 24 hours (e.g., valid for no more than 24 hours and 10 minutes if sent via text messaging) to provide additional time for the recovery contact to communicate the recovery code to the subscriber. \u2022 Confirmation of the recovery code address MAY also be extended by 24 hours to allow the recovery contact to send the confirmation code to the subscriber for entry. If the CSP supports the use of recovery contacts, the CSP SHALL provide methods for subscribers to view and manage recovery contacts. CSPs SHOULD send a reminder annually to subscribers to review their list of recovery contacts. 4.2.1.4. Repeated Identity Proofing When the subscriber account has been identity-proofed at a minimum of identity assurance level 1 (IAL1), CSPs SHOULD support account recovery by repeating a",
+        "baseline_rank": 3,
+        "bi_score": 0.5859062671661377,
+        "cross_score": 0.8332760334014893,
+        "reranked_rank": 4
+      },
+      {
+        "chunk_id": "p059_c04",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 420,
+        "token_end": 531,
+        "text": "the same characteristics as a recovery code to the newly established recovery address. A recovery address SHALL be established only after the subscriber provides the correct confirmation code to the CSP . CSPs SHALL allow the subscriber to establish at least two recovery addresses. 4.2.1.3. Recovery Contacts CSPs that support the use of recovery contacts SHALL allow the subscriber to specify one or more addresses of trusted associates to receive issued recovery codes. The requirements for recovery contacts are very similar to those for issued recovery codes with the following exceptions:",
+        "baseline_rank": 5,
+        "bi_score": 0.5805872082710266,
+        "cross_score": 0.681762158870697,
+        "reranked_rank": 5
+      },
+      {
+        "chunk_id": "p058_c04",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 420,
+        "token_end": 483,
+        "text": "-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber MAY request a replacement recovery code. The issuance of a replacement recovery code SHALL result in an account recovery notification, as described in Sec. 4.6.",
+        "baseline_rank": 7,
+        "bi_score": 0.5296538472175598,
+        "cross_score": -0.3013376295566559,
+        "reranked_rank": 6
+      },
+      {
+        "chunk_id": "p059_c01",
+        "pdf_page": 59,
+        "printed_page": "48",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Saved recovery codes are intended to be maintained offline (e.g., printed or written down) and stored securely by the subscriber for future use. The verification of saved recovery codes SHALL be subject to the throttling requirements in Sec. 3.2.2. Saved recovery codes SHALL be stored in the subscriber account in hashed form using an approved one-way function, as described in Sec. 3.1.1.2. Following the use of a saved recovery code, the CSP SHALL invalidate that recovery code and SHALL issue a new saved recovery code to the subscriber. 4.2.1.2. Issued Recovery Codes CSPs that support this option allow the subscriber to maintain one or more recovery addresses (e.g., postal, email, text message, voice). When recovery is required, a recovery code will",
+        "baseline_rank": 4,
+        "bi_score": 0.5849270224571228,
+        "cross_score": -1.2310786247253418,
+        "reranked_rank": 7
+      },
+      {
+        "chunk_id": "p058_c01",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "4.2. Account Recovery Account recovery is when a subscriber recovers from losing control of the authenticators that are needed to authenticate at a desired AAL. This may be accomplished by repeating portions of the identity proofing process, using a prearranged recovery contact, or presenting one or more recovery codes, perhaps in conjunction with using an authenticator that is still available to the subscriber bound to their subscriber account. Once this is completed, the subscriber can bind one or more new authenticators to their subscriber account. An account recovery event always causes one or more notifications to be sent to the subscriber to help detect the fraudulent use of account recovery. Account recovery differs from authentication in several ways. Since account recovery is expected to be invoked infrequently, it is generally less convenient than authentication and \u2014 depending on the situation",
+        "baseline_rank": 9,
+        "bi_score": 0.4260965883731842,
+        "cross_score": -1.7895435094833374,
+        "reranked_rank": 8
+      },
+      {
+        "chunk_id": "p058_c03",
+        "pdf_page": 58,
+        "printed_page": "47",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "CSPs SHALL support one or more of these and MAY support an application-specific method (e.g., interaction with a CSP agent) to recover a subscriber account. The use of alternative methods SHALL be based on a risk analysis and documented by the CSP . 4.2.1.1. Saved Recovery Codes At enrollment, a CSP that supports this recovery option SHOULD issue a recovery code to the subscriber. The recovery code SHALL include at least 64 bits from an approved random bit generator. The saved recovery code may be presented as numeric or a printable ASCII representation (e.g., Base64) for manual entry or as a machine-readable optical label (e.g., QR code) that contains the recovery code. At any point following enrollment, the subscriber MAY request a replacement recovery code. The iss",
+        "baseline_rank": 8,
+        "bi_score": 0.49000805616378784,
+        "cross_score": -4.00331974029541,
+        "reranked_rank": 9
+      },
+      {
+        "chunk_id": "p060_c03",
+        "pdf_page": 60,
+        "printed_page": "49",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "SP800-63A]. 4.2.2. Recovery Requirements by IAL/AAL Different recovery methods apply, depending on the IAL and the maximum AAL associated with the subscriber account. 4.2.2.1. Recovery Without Identity Proofing When subscribers have not been identity-proofed, a reproofing option is not available to support account recovery. The recovery of such subscriber accounts SHALL require the successful use of a saved recovery code, issued recovery code, or recovery contact. Since identity proofing requires issuing authenticators that are sufficient for multi-factor authentication to allow the subscriber to access personal information about themselves, subscriber accounts that can authenticate at a maximum of AAL1 are without identity proofing. 4.2.2.2. Recovery at AAL2 To recover an account that can authenticate",
+        "baseline_rank": 10,
+        "bi_score": 0.4208000600337982,
+        "cross_score": -4.1543169021606445,
+        "reranked_rank": 10
+      }
+    ],
+    "baseline_top3_ids": [
+      "p059_c03",
+      "p059_c02",
+      "p060_c01"
+    ],
+    "reranked_top3_ids": [
+      "p063_c02",
+      "p059_c02",
+      "p059_c03"
+    ],
+    "evidence_baseline_rank": 6,
+    "evidence_reranked_rank": 1,
+    "tracked_evidence_chunk_id": "p063_c02",
+    "best_original_evidence_rank": 6,
+    "designated_clause_recovered": true,
+    "single_pass_baseline_ms": 7.940582989249378,
+    "single_pass_rerank_ms": 129.82154099154286
+  },
+  {
+    "case": {
+      "id": "D03",
+      "query": "Can cloud-synced passkeys satisfy AAL3 if the cryptography is otherwise strong?",
+      "category": "Equivalent-evidence control",
+      "source_pdf_page": 20,
+      "critical_clause": "syncable authenticators SHALL NOT be used at AAL3",
+      "source_section": "2.3.2",
+      "expected_points": [
+        "No; syncable authenticators require exportable private keys and cannot be used at AAL3."
+      ],
+      "evaluation_role": "supported_baseline_control",
+      "selection_note": "The primary clause moves 4 to 2, but baseline rank 2 already contains the equivalent AAL3 syncing prohibition; do not call this a baseline failure."
+    },
+    "designated_evidence_ids": [
+      "p020_c01"
+    ],
+    "baseline_top10": [
+      {
+        "chunk_id": "p038_c02",
+        "pdf_page": 38,
+        "printed_page": "27",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "keys (usable at AAL3 or below) SHALL be stored in an isolated execution environment that is protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. Some cryptographic authenticators, referred to as syncable authenticators, can manage their authentication keys using a sync fabric (e.g., a cloud provider). Additional requirements for using syncable authenticators are in Appendix B. External (i.e., non-embedded) cryptographic authenticators SHALL meet the requirements for connected authenticators in Sec. 3.2.11. As required by Sec. 2.3.2, single-factor cryptographic authenticators that are being used at AAL3 must meet the authentication intent requirements of Sec. 3.2.8. 3.1.6.2. Single-Factor Cryptographic Verifiers",
+        "baseline_rank": 1,
+        "bi_score": 0.6476860046386719
+      },
+      {
+        "chunk_id": "p103_c02",
+        "pdf_page": 103,
+        "printed_page": "92",
+        "token_start": 140,
+        "token_end": 320,
+        "text": ") to maintain federal enterprise control over the authentication key\u2019s life cycle. \u2022 Authenticators that generate authentication keys SHOULD support attestation features that can be used to verify the capabilities and sources of the authenticator (e.g., enterprise attestation). These controls specifically support syncing and should be considered additive to the existing multi-factor cryptographic authenticator requirements and AAL2 requirements, including [FIPS140] validation. Syncing authentication keys inherently means that the key can be exported. Authentication at AAL2 may be supported subject to the above requirements. However, syncing violates the non-exportability requirements of AAL3. Similar protocols using keys not stored in an exportable manner that meet the other requirements of AAL3 may be used. B.3. Implementation Requirements Many syncable authenticators are built on W3C\u2019s [Web",
+        "baseline_rank": 2,
+        "bi_score": 0.6187705397605896
+      },
+      {
+        "chunk_id": "p019_c04",
+        "pdf_page": 19,
+        "printed_page": "8",
+        "token_start": 420,
+        "token_end": 560,
+        "text": ". All authentication and reauthentication processes at AAL3 SHALL demonstrate authentication intent from at least one authenticator, as described in Sec. 3.2.8. Cryptographic authenticators used at AAL3 SHALL use public-key cryptography to protect the authentication secrets from compromise of the verifier. Single-factor and multi-factor authenticators used at AAL3 SHALL be validated to meet the requirements of [FIPS140] Level 1 or higher overall. As described in Sec. 3.2.12, cryptographic authenticators used at AAL3 are required to provide a hardware-protected, isolated environment to prevent authentication keys from being leaked or",
+        "baseline_rank": 3,
+        "bi_score": 0.5518863797187805
+      },
+      {
+        "chunk_id": "p020_c01",
+        "pdf_page": 20,
+        "printed_page": "9",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "extracted. Since syncable authenticators (described in Appendix B) require the private key to be exportable, syncable authenticators SHALL NOT be used at AAL3. Cryptography used by verifiers at AAL3 SHALL be validated at [FIPS140] Level 1 or higher. Hardware-based authenticators and verifiers at AAL3 SHOULD resist relevant side-channel (e.g., timing and power-consumption analysis) attacks. 2.3.3. Reauthentication Periodic reauthentication of subscriber sessions SHALL be performed, as described in Sec. 5.2. At AAL3, the overall timeout for reauthentication SHALL be no more than 12 hours. The inactivity timeout SHOULD be no more than 15 minutes. Unlike AAL2, AAL3 reau",
+        "baseline_rank": 4,
+        "bi_score": 0.5517060160636902
+      },
+      {
+        "chunk_id": "p102_c03",
+        "pdf_page": 102,
+        "printed_page": "91",
+        "token_start": 280,
+        "token_end": 426,
+        "text": "can access their authentication keys in the sync fabric. \u2022 User access to authentication keys in the sync fabric SHALL be protected by AAL2-equivalent MFA to preserve the integrity of the authentication protocols using the synced keys. \u2022 These general requirements and any other agency-specific requirements for using syncable authenticators SHALL be documented and communicated, including on public-facing websites and digital service policies, where applicable. \u2022 Authenticators that enable the use of syncable authentication keys SHOULD provide a user interface (UI) that allows subscribers to view the services for which they have created a syncable authentication key, whether that key has been synced, and where that key has been synced. The UI SHALL NOT expose the authentication key itself.",
+        "baseline_rank": 5,
+        "bi_score": 0.5493419766426086
+      },
+      {
+        "chunk_id": "p039_c02",
+        "pdf_page": 39,
+        "printed_page": "28",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "-resistant if it meets the additional requirements in Sec. 3.2.5. 3.1.7.1. Multi-Factor Cryptographic Authenticators Multi-factor cryptographic authenticators encapsulate one or more authentication keys that SHALL only be accessible through the presentation and verification of an activation factor (i.e., a password or a biometric characteristic). Non-exportable authentication keys, suitable for use at AAL3, SHALL be stored in an isolated execution environment that is protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. Exportable authentication keys (usable at AAL2 or below) SHOULD be stored in appropriate storage that is available to the authenticator (e.g., keychain storage). If accessible to the endpoint being authenticated, authentication keys SHALL be strongly protected against",
+        "baseline_rank": 6,
+        "bi_score": 0.5365272760391235
+      },
+      {
+        "chunk_id": "p108_c01",
+        "pdf_page": 108,
+        "printed_page": "97",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Continued from previous page Threat or Challenge Description Mitigations Implement sync fabric access controls that prevent anyone other than the authenticated user from accessing the authentication key. Evaluate cloud services for baseline security features (e.g., FISMA moderate protections or comparable). Leverage hardware security modules to protect encrypted keys. Unauthorized access to sync fabric and recovery Synced keys are accessible via cloud-based account recovery processes, which represent a potential weakness to the authenticators. Implement authentication recovery processes that are consistent with SP 800-63B. Restrict recovery capabilities for federal enterprise keys through device management or managed account capabilities. Bind multiple authenticators at AAL2 and above to support recovery. Require AAL2 authentication to add any new authenticators for user access to the sync fabric. Only use synced keys as a derived authenticator in federal enterprise scenarios [SP800-157]. Not",
+        "baseline_rank": 7,
+        "bi_score": 0.5312095880508423
+      },
+      {
+        "chunk_id": "p102_c01",
+        "pdf_page": 102,
+        "printed_page": "91",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Appendix B. Syncable Authenticators This appendix is normative. B.1. Introduction The ability to \u201csync\u201d authenticators \u2014 specifically to copy (i.e., clone) their authentication secrets to the cloud and thence to additional authenticators \u2014 is a relatively new development in authentication. This appendix provides additional guidelines on the use of syncable authenticators. B.2. Cloning Authentication Keys In some cases, authentication keys may be stored in a sync fabric (e.g., cloud storage). This allows the keys to be backed up and transferred to other devices. The following requirements apply to keys that are managed in this manner: \u2022 All keys SHALL be generated using approved cryptography. \u2022 Authentication keys that are cloned or exported from a device to a sync fabric SHALL only be stored in an encrypted form using a key with the minimum security strength specified in the",
+        "baseline_rank": 8,
+        "bi_score": 0.525809109210968
+      },
+      {
+        "chunk_id": "p019_c01",
+        "pdf_page": 19,
+        "printed_page": "8",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "2.3. Authentication Assurance Level 3 AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account. Authentication at AAL3 is based on the proof of possession of a key through the use of a cryptographic protocol along with either an activation factor or a password. AAL3 authentication requires the use of a cryptographic authenticator with a non-exportable private key that provides phishing resistance. Approved cryptographic techniques are required. 2.3.1. Permitted Authenticator Types AAL3 authentication SHALL require one of the following authenticator combinations: \u2022 Multi-factor cryptographic authentication (Sec. 3.1.7) \u2022 Single-factor cryptographic authentication (Sec. 3.1.6) used in conjunction with either a password (Sec. 3.1.1) or a biometric comparison A biometric characteristic",
+        "baseline_rank": 9,
+        "bi_score": 0.5224298238754272
+      },
+      {
+        "chunk_id": "p052_c04",
+        "pdf_page": 52,
+        "printed_page": "41",
+        "token_start": 420,
+        "token_end": 547,
+        "text": ".g., TPM) or a dedicated device (e.g., a security key). This is intended to prevent software on the endpoint from copying or leaking the authentication secret. Non-exportable authentication keys are considered more secure, and accordingly, non-exportable cryptographic keys are required at AAL3. The authentication keys on syncable authenticators are inherently exportable (see Appendix B). 5Detailed information on generating random values may be found in [SP800-90A], [SP800-90B], and [SP800-90C].",
+        "baseline_rank": 10,
+        "bi_score": 0.5193040370941162
+      }
+    ],
+    "reranked_top10": [
+      {
+        "chunk_id": "p038_c02",
+        "pdf_page": 38,
+        "printed_page": "27",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "keys (usable at AAL3 or below) SHALL be stored in an isolated execution environment that is protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. Some cryptographic authenticators, referred to as syncable authenticators, can manage their authentication keys using a sync fabric (e.g., a cloud provider). Additional requirements for using syncable authenticators are in Appendix B. External (i.e., non-embedded) cryptographic authenticators SHALL meet the requirements for connected authenticators in Sec. 3.2.11. As required by Sec. 2.3.2, single-factor cryptographic authenticators that are being used at AAL3 must meet the authentication intent requirements of Sec. 3.2.8. 3.1.6.2. Single-Factor Cryptographic Verifiers",
+        "baseline_rank": 1,
+        "bi_score": 0.6476860046386719,
+        "cross_score": 2.2027971744537354,
+        "reranked_rank": 1
+      },
+      {
+        "chunk_id": "p020_c01",
+        "pdf_page": 20,
+        "printed_page": "9",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "extracted. Since syncable authenticators (described in Appendix B) require the private key to be exportable, syncable authenticators SHALL NOT be used at AAL3. Cryptography used by verifiers at AAL3 SHALL be validated at [FIPS140] Level 1 or higher. Hardware-based authenticators and verifiers at AAL3 SHOULD resist relevant side-channel (e.g., timing and power-consumption analysis) attacks. 2.3.3. Reauthentication Periodic reauthentication of subscriber sessions SHALL be performed, as described in Sec. 5.2. At AAL3, the overall timeout for reauthentication SHALL be no more than 12 hours. The inactivity timeout SHOULD be no more than 15 minutes. Unlike AAL2, AAL3 reau",
+        "baseline_rank": 4,
+        "bi_score": 0.5517060160636902,
+        "cross_score": 1.664766788482666,
+        "reranked_rank": 2
+      },
+      {
+        "chunk_id": "p108_c01",
+        "pdf_page": 108,
+        "printed_page": "97",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Continued from previous page Threat or Challenge Description Mitigations Implement sync fabric access controls that prevent anyone other than the authenticated user from accessing the authentication key. Evaluate cloud services for baseline security features (e.g., FISMA moderate protections or comparable). Leverage hardware security modules to protect encrypted keys. Unauthorized access to sync fabric and recovery Synced keys are accessible via cloud-based account recovery processes, which represent a potential weakness to the authenticators. Implement authentication recovery processes that are consistent with SP 800-63B. Restrict recovery capabilities for federal enterprise keys through device management or managed account capabilities. Bind multiple authenticators at AAL2 and above to support recovery. Require AAL2 authentication to add any new authenticators for user access to the sync fabric. Only use synced keys as a derived authenticator in federal enterprise scenarios [SP800-157]. Not",
+        "baseline_rank": 7,
+        "bi_score": 0.5312095880508423,
+        "cross_score": 0.43632450699806213,
+        "reranked_rank": 3
+      },
+      {
+        "chunk_id": "p103_c02",
+        "pdf_page": 103,
+        "printed_page": "92",
+        "token_start": 140,
+        "token_end": 320,
+        "text": ") to maintain federal enterprise control over the authentication key\u2019s life cycle. \u2022 Authenticators that generate authentication keys SHOULD support attestation features that can be used to verify the capabilities and sources of the authenticator (e.g., enterprise attestation). These controls specifically support syncing and should be considered additive to the existing multi-factor cryptographic authenticator requirements and AAL2 requirements, including [FIPS140] validation. Syncing authentication keys inherently means that the key can be exported. Authentication at AAL2 may be supported subject to the above requirements. However, syncing violates the non-exportability requirements of AAL3. Similar protocols using keys not stored in an exportable manner that meet the other requirements of AAL3 may be used. B.3. Implementation Requirements Many syncable authenticators are built on W3C\u2019s [Web",
+        "baseline_rank": 2,
+        "bi_score": 0.6187705397605896,
+        "cross_score": -0.3180127739906311,
+        "reranked_rank": 4
+      },
+      {
+        "chunk_id": "p052_c04",
+        "pdf_page": 52,
+        "printed_page": "41",
+        "token_start": 420,
+        "token_end": 547,
+        "text": ".g., TPM) or a dedicated device (e.g., a security key). This is intended to prevent software on the endpoint from copying or leaking the authentication secret. Non-exportable authentication keys are considered more secure, and accordingly, non-exportable cryptographic keys are required at AAL3. The authentication keys on syncable authenticators are inherently exportable (see Appendix B). 5Detailed information on generating random values may be found in [SP800-90A], [SP800-90B], and [SP800-90C].",
+        "baseline_rank": 10,
+        "bi_score": 0.5193040370941162,
+        "cross_score": -0.41459518671035767,
+        "reranked_rank": 5
+      },
+      {
+        "chunk_id": "p019_c04",
+        "pdf_page": 19,
+        "printed_page": "8",
+        "token_start": 420,
+        "token_end": 560,
+        "text": ". All authentication and reauthentication processes at AAL3 SHALL demonstrate authentication intent from at least one authenticator, as described in Sec. 3.2.8. Cryptographic authenticators used at AAL3 SHALL use public-key cryptography to protect the authentication secrets from compromise of the verifier. Single-factor and multi-factor authenticators used at AAL3 SHALL be validated to meet the requirements of [FIPS140] Level 1 or higher overall. As described in Sec. 3.2.12, cryptographic authenticators used at AAL3 are required to provide a hardware-protected, isolated environment to prevent authentication keys from being leaked or",
+        "baseline_rank": 3,
+        "bi_score": 0.5518863797187805,
+        "cross_score": -1.3397254943847656,
+        "reranked_rank": 6
+      },
+      {
+        "chunk_id": "p102_c03",
+        "pdf_page": 102,
+        "printed_page": "91",
+        "token_start": 280,
+        "token_end": 426,
+        "text": "can access their authentication keys in the sync fabric. \u2022 User access to authentication keys in the sync fabric SHALL be protected by AAL2-equivalent MFA to preserve the integrity of the authentication protocols using the synced keys. \u2022 These general requirements and any other agency-specific requirements for using syncable authenticators SHALL be documented and communicated, including on public-facing websites and digital service policies, where applicable. \u2022 Authenticators that enable the use of syncable authentication keys SHOULD provide a user interface (UI) that allows subscribers to view the services for which they have created a syncable authentication key, whether that key has been synced, and where that key has been synced. The UI SHALL NOT expose the authentication key itself.",
+        "baseline_rank": 5,
+        "bi_score": 0.5493419766426086,
+        "cross_score": -1.7259079217910767,
+        "reranked_rank": 7
+      },
+      {
+        "chunk_id": "p039_c02",
+        "pdf_page": 39,
+        "printed_page": "28",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "-resistant if it meets the additional requirements in Sec. 3.2.5. 3.1.7.1. Multi-Factor Cryptographic Authenticators Multi-factor cryptographic authenticators encapsulate one or more authentication keys that SHALL only be accessible through the presentation and verification of an activation factor (i.e., a password or a biometric characteristic). Non-exportable authentication keys, suitable for use at AAL3, SHALL be stored in an isolated execution environment that is protected by hardware or in a separate processor with a controlled interface to the central processing unit of the user endpoint. Exportable authentication keys (usable at AAL2 or below) SHOULD be stored in appropriate storage that is available to the authenticator (e.g., keychain storage). If accessible to the endpoint being authenticated, authentication keys SHALL be strongly protected against",
+        "baseline_rank": 6,
+        "bi_score": 0.5365272760391235,
+        "cross_score": -1.8053699731826782,
+        "reranked_rank": 8
+      },
+      {
+        "chunk_id": "p019_c01",
+        "pdf_page": 19,
+        "printed_page": "8",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "2.3. Authentication Assurance Level 3 AAL3 provides very high confidence that the claimant controls authenticators that are bound to the subscriber account. Authentication at AAL3 is based on the proof of possession of a key through the use of a cryptographic protocol along with either an activation factor or a password. AAL3 authentication requires the use of a cryptographic authenticator with a non-exportable private key that provides phishing resistance. Approved cryptographic techniques are required. 2.3.1. Permitted Authenticator Types AAL3 authentication SHALL require one of the following authenticator combinations: \u2022 Multi-factor cryptographic authentication (Sec. 3.1.7) \u2022 Single-factor cryptographic authentication (Sec. 3.1.6) used in conjunction with either a password (Sec. 3.1.1) or a biometric comparison A biometric characteristic",
+        "baseline_rank": 9,
+        "bi_score": 0.5224298238754272,
+        "cross_score": -2.6851930618286133,
+        "reranked_rank": 9
+      },
+      {
+        "chunk_id": "p102_c01",
+        "pdf_page": 102,
+        "printed_page": "91",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "Appendix B. Syncable Authenticators This appendix is normative. B.1. Introduction The ability to \u201csync\u201d authenticators \u2014 specifically to copy (i.e., clone) their authentication secrets to the cloud and thence to additional authenticators \u2014 is a relatively new development in authentication. This appendix provides additional guidelines on the use of syncable authenticators. B.2. Cloning Authentication Keys In some cases, authentication keys may be stored in a sync fabric (e.g., cloud storage). This allows the keys to be backed up and transferred to other devices. The following requirements apply to keys that are managed in this manner: \u2022 All keys SHALL be generated using approved cryptography. \u2022 Authentication keys that are cloned or exported from a device to a sync fabric SHALL only be stored in an encrypted form using a key with the minimum security strength specified in the",
+        "baseline_rank": 8,
+        "bi_score": 0.525809109210968,
+        "cross_score": -2.70953369140625,
+        "reranked_rank": 10
+      }
+    ],
+    "baseline_top3_ids": [
+      "p038_c02",
+      "p103_c02",
+      "p019_c04"
+    ],
+    "reranked_top3_ids": [
+      "p038_c02",
+      "p020_c01",
+      "p108_c01"
+    ],
+    "evidence_baseline_rank": 4,
+    "evidence_reranked_rank": 2,
+    "tracked_evidence_chunk_id": "p020_c01",
+    "best_original_evidence_rank": 4,
+    "designated_clause_recovered": true,
+    "single_pass_baseline_ms": 4.808083001989871,
+    "single_pass_rerank_ms": 137.65554199926555
+  },
+  {
+    "case": {
+      "id": "D05",
+      "query": "May a service authenticate people by recognising their voice instead of using their face or fingerprint?",
+      "category": "Negation / missing-candidate limitation",
+      "source_pdf_page": 43,
+      "critical_clause": "Biometric comparison based on voice SHALL NOT be used",
+      "source_section": "3.2.3.2",
+      "expected_points": [
+        "Voice-based biometric comparison must not be used."
+      ],
+      "evaluation_role": "top10_recall_limitation",
+      "selection_note": "The voice-biometric prohibition is absent from the original Top 10, so re-ranking cannot retrieve it."
+    },
+    "designated_evidence_ids": [
+      "p043_c04"
+    ],
+    "baseline_top10": [
+      {
+        "chunk_id": "p090_c02",
+        "pdf_page": 90,
+        "printed_page": "79",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "aspect of customer experience is anticipating the needs of the user population and offering authenticator options that are suitable for that population. Some examples of authenticator suitability problems are: \u2022 SMS-based out-of-band authentication may not be usable for subscribers in rural areas without mobile phone service. \u2022 OTP authenticators may be difficult to read for subscribers with vision issues. \u2022 Out-of-band authentication secrets sent via a voice telephone call may be difficult to understand for subscribers with hearing issues. \u2022 Some facial matching algorithms may not perform equally well for all user populations. \u2022 Some subscribers may have conditions that interfere with fingerprint collection, such as missing fingers, degraded fingerprints (e.g., from working with chemicals or extensively using their hands), or dexterity problems. \u2022 The cost of hardware-based authenticators may be beyond the means of some subscribers. \u2022 Accurate manual entry of password",
+        "baseline_rank": 1,
+        "bi_score": 0.55330890417099
+      },
+      {
+        "chunk_id": "p043_c02",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7. Therefore, the limited use of biometrics for authentication is supported with specific requirements and guidelines. Biometrics SHALL only be used as part of multi-factor authentication with a physical authenticator (i.e., \u201csomething you have\u201d). The biometric characteristic SHALL be presented and compared for each authentication operation. An alternative non-biometric authentication option SHALL always be provided to the subscriber. Biometric data SHALL be treated and secured as sensitive personal information. 3.2.3.1. Biometric Accuracy The biometric system SHALL operate with an FMR [ISO/IEC2382-37] of one in 10000 or better for all demographic groups.",
+        "baseline_rank": 2,
+        "bi_score": 0.5356156826019287
+      },
+      {
+        "chunk_id": "p042_c02",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "rifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the session from which it is being reset. If the subscriber cannot authenticate at the required AAL, the account recovery procedures in Sec. 4.2 SHALL be used. 3.2.3. Use of Biometrics Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics, such as fingerprints, voice patterns, facial features, keystroke patterns, angle of holding a smart phone, screen pressure, typing speed, mouse movements, or gait. Such characteristics have multiple modalities that may differ in the extent to which they establish authentication intent, as described in Sec. 3.2.8. Biometric comparisons are based on a measurement from the",
+        "baseline_rank": 3,
+        "bi_score": 0.5318717360496521
+      },
+      {
+        "chunk_id": "p045_c01",
+        "pdf_page": 45,
+        "printed_page": "34",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An authenticated protected channel between the sensor (or an endpoint containing a sensor that resists sensor replacement) and the verifier SHALL be established. All transmission of biometric information SHALL be conducted over that authenticated protected channel. 3.2.3.4. Use of Biometric Samples Biometric samples collected in the authentication process MAY be used locally within the authenticator or verifier performing the biometric comparison to update the templates for the purpose of compensating for changes in subscriber characteristics or \u2014 with explicit subscriber consent \u2014 other research purposes. The biometric samples and any other biometric data derived from them SHALL be erased immediately after any adaptation or research data has been derived. A limit on the allowable time for adaptation SHALL be established and enforced by the authenticator or the CSP . 3.2.4. Attestation",
+        "baseline_rank": 4,
+        "bi_score": 0.5306558609008789
+      },
+      {
+        "chunk_id": "p044_c03",
+        "pdf_page": 44,
+        "printed_page": "33",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "device being used by the claimant or at a central verifier. Since the potential for attacks on a larger scale is greater at central verifiers, comparison SHOULD be performed locally. The presentation of a biometric factor for authenticator activation SHALL be a separate operation from unlocking the host device (e.g., smartphone). However, the same activation factor used to unlock the host device MAY be used in the authentication operation. Agencies MAY lower this requirement for authenticators that are managed by or on behalf of the CSP (e.g., via mobile device management) and constrained to have short agency-determined inactivity timeouts and biometric systems that meet the above requirements. If the comparison is performed centrally: \u2022 The sensor or endpoint SHALL be authenticated before capturing the biometric sample from the claimant. The verifier MAY limit the",
+        "baseline_rank": 5,
+        "bi_score": 0.5261022448539734
+      },
+      {
+        "chunk_id": "p090_c01",
+        "pdf_page": 90,
+        "printed_page": "79",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An alternative authentication method must be readily available and clearly communicated. Users should never be required to attempt biometric authentication and should be permitted to use a password as an alternative second factor. \u2022 There should be provisions for technical assistance: \u2013 Clearly communicate information on how and where to acquire technical assistance. For example, provide users with a link to an online self-service feature or a phone number for help desk support. Ideally, provide sufficient information to enable users to recover from intermittent events on their own without outside intervention. \u2013 Inform users of factors that may affect the sensitivity of the biometric sensor (e.g., cleanliness of the sensor). 8.2. Customer Success Considerations A primary aspect of customer experience is anticipating the needs of the user population and offering authenticator options that are suitable for that population. Some examples of authenticator suitability problems are: \u2022 SMS-based out-",
+        "baseline_rank": 6,
+        "bi_score": 0.5256745219230652
+      },
+      {
+        "chunk_id": "p048_c02",
+        "pdf_page": 48,
+        "printed_page": "37",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "g., a claimant entering an authenticator output from an OTP authenticator). Cryptographic authenticators that require claimant action for each authentication or reauthentication operation can also be used to establish intent (e.g., by pushing a button or reinsertion). The presentation of biometric characteristics does not always establish authentication intent. For example, using a front-facing camera on a mobile phone to capture a face biometric does not necessarily constitute intent, as it can be reasonably expected to capture a face image while the device is used for other non-authentication purposes. In these scenarios, an explicit mechanism (e.g., tapping a software or physical button) SHALL be provided to establish authentication intent. 3.2.9. Restricted Authenticators As threats evolve, authenticators\u2019 ability to resist attacks typically degrades. Conversely, the performance of",
+        "baseline_rank": 7,
+        "bi_score": 0.5203310251235962
+      },
+      {
+        "chunk_id": "p043_c01",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Biometric template protection schemes provide a method for revoking biometric characteristics that are comparable to other authentication factors (e.g., PKI certificates, passwords). However, the availability of such solutions is limited. \u2022 Biometric characteristics do not constitute secrets. They can often be obtained online or otherwise without consent. A facial image can be obtained by taking a picture; latent fingerprints can be obtained from objects someone touches; and iris patterns can be captured with high-resolution cameras. While presentation attack detection (PAD) technologies can mitigate the risks of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7",
+        "baseline_rank": 8,
+        "bi_score": 0.5121725797653198
+      },
+      {
+        "chunk_id": "p042_c04",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 420,
+        "token_end": 568,
+        "text": "result in a match, referred to as a false match rate (FMR). A high-quality biometric system has both a very low FMR and FNMR. The chosen threshold usually emphasizes a low FMR to maximize security since false non-matches can often be mitigated by repeating the measurement or using an alternative authentication method. For a variety of reasons, this document supports only a limited use of biometrics for authentication. These reasons include: \u2022 The biometric FMR does not provide sufficient confidence in the subscriber\u2019s authentication by itself because it does not account for active impersonation attacks. \u2022 Biometric comparison is probabilistic, whereas the other authentication factors are deterministic.",
+        "baseline_rank": 9,
+        "bi_score": 0.5084681510925293
+      },
+      {
+        "chunk_id": "p089_c01",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Fingerprint usability considerations: \u2013 Users have to remember which fingers they used for initial enrollment. \u2013 The amount of moisture on the finger affects the sensor\u2019s ability for successful capture. \u2013 Additional factors that influence fingerprint capture quality include age, sex, and occupation (e.g., users who handle chemicals or work extensively with their hands may have degraded friction ridges). \u2022 Facial comparison usability considerations: \u2013 Users have to remember whether they wore any artifacts (e.g., glasses) during enrollment, which affects facial recognition accuracy. \u2013 Differences in environmental lighting conditions may affect facial recognition accuracy. \u2013 Facial expressions affect facial recognition accuracy (e.g., smiling versus a neutral expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition",
+        "baseline_rank": 10,
+        "bi_score": 0.5064138174057007
+      }
+    ],
+    "reranked_top10": [
+      {
+        "chunk_id": "p090_c02",
+        "pdf_page": 90,
+        "printed_page": "79",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "aspect of customer experience is anticipating the needs of the user population and offering authenticator options that are suitable for that population. Some examples of authenticator suitability problems are: \u2022 SMS-based out-of-band authentication may not be usable for subscribers in rural areas without mobile phone service. \u2022 OTP authenticators may be difficult to read for subscribers with vision issues. \u2022 Out-of-band authentication secrets sent via a voice telephone call may be difficult to understand for subscribers with hearing issues. \u2022 Some facial matching algorithms may not perform equally well for all user populations. \u2022 Some subscribers may have conditions that interfere with fingerprint collection, such as missing fingers, degraded fingerprints (e.g., from working with chemicals or extensively using their hands), or dexterity problems. \u2022 The cost of hardware-based authenticators may be beyond the means of some subscribers. \u2022 Accurate manual entry of password",
+        "baseline_rank": 1,
+        "bi_score": 0.55330890417099,
+        "cross_score": -0.6437556743621826,
+        "reranked_rank": 1
+      },
+      {
+        "chunk_id": "p042_c02",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "rifier SHOULD reset the retry count of the authenticators that were used. If this is provided, the maximum AAL of the authenticator being reset SHALL not exceed the AAL of the session from which it is being reset. If the subscriber cannot authenticate at the required AAL, the account recovery procedures in Sec. 4.2 SHALL be used. 3.2.3. Use of Biometrics Biometrics is the automated recognition of individuals based on their biological and behavioral characteristics, such as fingerprints, voice patterns, facial features, keystroke patterns, angle of holding a smart phone, screen pressure, typing speed, mouse movements, or gait. Such characteristics have multiple modalities that may differ in the extent to which they establish authentication intent, as described in Sec. 3.2.8. Biometric comparisons are based on a measurement from the",
+        "baseline_rank": 3,
+        "bi_score": 0.5318717360496521,
+        "cross_score": -3.82696533203125,
+        "reranked_rank": 2
+      },
+      {
+        "chunk_id": "p048_c02",
+        "pdf_page": 48,
+        "printed_page": "37",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "g., a claimant entering an authenticator output from an OTP authenticator). Cryptographic authenticators that require claimant action for each authentication or reauthentication operation can also be used to establish intent (e.g., by pushing a button or reinsertion). The presentation of biometric characteristics does not always establish authentication intent. For example, using a front-facing camera on a mobile phone to capture a face biometric does not necessarily constitute intent, as it can be reasonably expected to capture a face image while the device is used for other non-authentication purposes. In these scenarios, an explicit mechanism (e.g., tapping a software or physical button) SHALL be provided to establish authentication intent. 3.2.9. Restricted Authenticators As threats evolve, authenticators\u2019 ability to resist attacks typically degrades. Conversely, the performance of",
+        "baseline_rank": 7,
+        "bi_score": 0.5203310251235962,
+        "cross_score": -5.620932102203369,
+        "reranked_rank": 3
+      },
+      {
+        "chunk_id": "p090_c01",
+        "pdf_page": 90,
+        "printed_page": "79",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An alternative authentication method must be readily available and clearly communicated. Users should never be required to attempt biometric authentication and should be permitted to use a password as an alternative second factor. \u2022 There should be provisions for technical assistance: \u2013 Clearly communicate information on how and where to acquire technical assistance. For example, provide users with a link to an online self-service feature or a phone number for help desk support. Ideally, provide sufficient information to enable users to recover from intermittent events on their own without outside intervention. \u2013 Inform users of factors that may affect the sensitivity of the biometric sensor (e.g., cleanliness of the sensor). 8.2. Customer Success Considerations A primary aspect of customer experience is anticipating the needs of the user population and offering authenticator options that are suitable for that population. Some examples of authenticator suitability problems are: \u2022 SMS-based out-",
+        "baseline_rank": 6,
+        "bi_score": 0.5256745219230652,
+        "cross_score": -5.756059169769287,
+        "reranked_rank": 4
+      },
+      {
+        "chunk_id": "p089_c01",
+        "pdf_page": 89,
+        "printed_page": "78",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Fingerprint usability considerations: \u2013 Users have to remember which fingers they used for initial enrollment. \u2013 The amount of moisture on the finger affects the sensor\u2019s ability for successful capture. \u2013 Additional factors that influence fingerprint capture quality include age, sex, and occupation (e.g., users who handle chemicals or work extensively with their hands may have degraded friction ridges). \u2022 Facial comparison usability considerations: \u2013 Users have to remember whether they wore any artifacts (e.g., glasses) during enrollment, which affects facial recognition accuracy. \u2013 Differences in environmental lighting conditions may affect facial recognition accuracy. \u2013 Facial expressions affect facial recognition accuracy (e.g., smiling versus a neutral expression). \u2013 Facial poses affect facial recognition accuracy (e.g., looking down or away from the camera). \u2022 Iris comparison usability considerations: \u2013 Wearing colored contacts may affect iris recognition",
+        "baseline_rank": 10,
+        "bi_score": 0.5064138174057007,
+        "cross_score": -7.659034252166748,
+        "reranked_rank": 5
+      },
+      {
+        "chunk_id": "p044_c03",
+        "pdf_page": 44,
+        "printed_page": "33",
+        "token_start": 280,
+        "token_end": 460,
+        "text": "device being used by the claimant or at a central verifier. Since the potential for attacks on a larger scale is greater at central verifiers, comparison SHOULD be performed locally. The presentation of a biometric factor for authenticator activation SHALL be a separate operation from unlocking the host device (e.g., smartphone). However, the same activation factor used to unlock the host device MAY be used in the authentication operation. Agencies MAY lower this requirement for authenticators that are managed by or on behalf of the CSP (e.g., via mobile device management) and constrained to have short agency-determined inactivity timeouts and biometric systems that meet the above requirements. If the comparison is performed centrally: \u2022 The sensor or endpoint SHALL be authenticated before capturing the biometric sample from the claimant. The verifier MAY limit the",
+        "baseline_rank": 5,
+        "bi_score": 0.5261022448539734,
+        "cross_score": -7.6783366203308105,
+        "reranked_rank": 6
+      },
+      {
+        "chunk_id": "p043_c02",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 140,
+        "token_end": 320,
+        "text": "the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7. Therefore, the limited use of biometrics for authentication is supported with specific requirements and guidelines. Biometrics SHALL only be used as part of multi-factor authentication with a physical authenticator (i.e., \u201csomething you have\u201d). The biometric characteristic SHALL be presented and compared for each authentication operation. An alternative non-biometric authentication option SHALL always be provided to the subscriber. Biometric data SHALL be treated and secured as sensitive personal information. 3.2.3.1. Biometric Accuracy The biometric system SHALL operate with an FMR [ISO/IEC2382-37] of one in 10000 or better for all demographic groups.",
+        "baseline_rank": 2,
+        "bi_score": 0.5356156826019287,
+        "cross_score": -8.063868522644043,
+        "reranked_rank": 7
+      },
+      {
+        "chunk_id": "p043_c01",
+        "pdf_page": 43,
+        "printed_page": "32",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 Biometric template protection schemes provide a method for revoking biometric characteristics that are comparable to other authentication factors (e.g., PKI certificates, passwords). However, the availability of such solutions is limited. \u2022 Biometric characteristics do not constitute secrets. They can often be obtained online or otherwise without consent. A facial image can be obtained by taking a picture; latent fingerprints can be obtained from objects someone touches; and iris patterns can be captured with high-resolution cameras. While presentation attack detection (PAD) technologies can mitigate the risks of these types of attacks, additional trust in the sensor or biometric processing is required to ensure that PAD is operating in accordance with the needs of the CSP and the subscriber. \u2022 The use of biometric characteristics, especially when stored for central verification, introduces new privacy concerns, which are discussed further in Sec. 7",
+        "baseline_rank": 8,
+        "bi_score": 0.5121725797653198,
+        "cross_score": -9.010446548461914,
+        "reranked_rank": 8
+      },
+      {
+        "chunk_id": "p045_c01",
+        "pdf_page": 45,
+        "printed_page": "34",
+        "token_start": 0,
+        "token_end": 180,
+        "text": "\u2022 An authenticated protected channel between the sensor (or an endpoint containing a sensor that resists sensor replacement) and the verifier SHALL be established. All transmission of biometric information SHALL be conducted over that authenticated protected channel. 3.2.3.4. Use of Biometric Samples Biometric samples collected in the authentication process MAY be used locally within the authenticator or verifier performing the biometric comparison to update the templates for the purpose of compensating for changes in subscriber characteristics or \u2014 with explicit subscriber consent \u2014 other research purposes. The biometric samples and any other biometric data derived from them SHALL be erased immediately after any adaptation or research data has been derived. A limit on the allowable time for adaptation SHALL be established and enforced by the authenticator or the CSP . 3.2.4. Attestation",
+        "baseline_rank": 4,
+        "bi_score": 0.5306558609008789,
+        "cross_score": -9.141489028930664,
+        "reranked_rank": 9
+      },
+      {
+        "chunk_id": "p042_c04",
+        "pdf_page": 42,
+        "printed_page": "31",
+        "token_start": 420,
+        "token_end": 568,
+        "text": "result in a match, referred to as a false match rate (FMR). A high-quality biometric system has both a very low FMR and FNMR. The chosen threshold usually emphasizes a low FMR to maximize security since false non-matches can often be mitigated by repeating the measurement or using an alternative authentication method. For a variety of reasons, this document supports only a limited use of biometrics for authentication. These reasons include: \u2022 The biometric FMR does not provide sufficient confidence in the subscriber\u2019s authentication by itself because it does not account for active impersonation attacks. \u2022 Biometric comparison is probabilistic, whereas the other authentication factors are deterministic.",
+        "baseline_rank": 9,
+        "bi_score": 0.5084681510925293,
+        "cross_score": -9.603050231933594,
+        "reranked_rank": 10
+      }
+    ],
+    "baseline_top3_ids": [
+      "p090_c02",
+      "p043_c02",
+      "p042_c02"
+    ],
+    "reranked_top3_ids": [
+      "p090_c02",
+      "p042_c02",
+      "p048_c02"
+    ],
+    "evidence_baseline_rank": null,
+    "evidence_reranked_rank": null,
+    "tracked_evidence_chunk_id": null,
+    "best_original_evidence_rank": null,
+    "designated_clause_recovered": false,
+    "single_pass_baseline_ms": 4.486541991354898,
+    "single_pass_rerank_ms": 130.83516698679887
+  }
+]

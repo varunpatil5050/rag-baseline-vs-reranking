@@ -1,0 +1,64 @@
+{
+  "run_started_utc": "2026-10-11T20:05:33.388036+00:00",
+  "notebook_code_sha256": "2a97cb2cc1e1f88090eae45e69eec5bd7137222a679faf9b6eb72ef344e0d58a",
+  "query_file": "data/queries.json",
+  "query_file_sha256": "a6f8f1f5c705c53a09dabba810f9d39a573e075da9dd2625fdee8965fb6ff6cd",
+  "evaluation_mode": "selected",
+  "results_directory": "results",
+  "python": "3.12.3",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "processor": "arm64",
+  "device": "cpu",
+  "torch_threads": 1,
+  "faiss_threads": 1,
+  "packages": {
+    "torch": "2.14.1",
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.19.0",
+    "faiss-cpu": "1.15.1",
+    "pypdf": "6.20.0",
+    "google-genai": "2.29.0"
+  },
+  "source": {
+    "title": "Digital Identity Guidelines: Authentication and Authenticator Management",
+    "publication": "NIST SP 800-63B-4",
+    "edition": "Final, July 2025",
+    "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b-4.pdf",
+    "landing_page": "https://csrc.nist.gov/pubs/sp/800/63/b/4/final",
+    "sha256": "d9ab89576b5ae2cfb3ba37781110788dea27a85a5079496dbfc1a79834670afd",
+    "bytes": 993734,
+    "pages": 129
+  },
+  "retrieval_models": {
+    "bi_encoder": {
+      "name": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+    },
+    "cross_encoder": {
+      "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+    }
+  },
+  "chunk_tokens": 180,
+  "overlap_tokens": 40,
+  "top_k": 10,
+  "context_k": 3,
+  "latency_repetitions": 7,
+  "gemini_model_requested": "gemini-3.8-flash",
+  "model_loading_s": 0.16297083400422707,
+  "extraction_chunking_s": 1.0390725830220617,
+  "included_pdf_pages": [
+    12,
+    129
+  ],
+  "chunk_count": 409,
+  "corpus_sha256": "0b6e03b2116243b23953071a8179a4d203e3f1663a2eda2cb59594e9e94de800",
+  "embedding_index_s": 4.789017875009449,
+  "query_count": 5,
+  "answer_status": "complete",
+  "paired_answers_present": 10,
+  "answers_reused_from_exact_request_cache": 10,
+  "answers_generated_this_run": 0,
+  "gemini_responses_generated_this_run": 0,
+  "run_completed_utc": "2026-10-11T20:05:45.753823+00:00"
+}

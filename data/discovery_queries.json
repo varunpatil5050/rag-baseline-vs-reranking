@@ -1,0 +1,494 @@
+[
+  {
+    "id": "D01",
+    "query": "If email is forbidden for out-of-band authentication, can it still deliver account recovery or address-validation codes?",
+    "category": "exceptions",
+    "source_pdf_page": 31,
+    "critical_clause": "Confirmation codes that are sent to validate email addresses",
+    "source_section": "3.1.3.1",
+    "expected_points": [
+      "Email is prohibited for out-of-band authentication.",
+      "Email-address confirmation and recovery codes are not authentication processes and are outside that prohibition."
+    ]
+  },
+  {
+    "id": "D02",
+    "query": "Must every password be at least fifteen characters even when it is used only as one factor in MFA?",
+    "category": "exceptions",
+    "source_pdf_page": 25,
+    "critical_clause": "minimum of eight characters in length",
+    "source_section": "3.1.1.2",
+    "expected_points": [
+      "Single-factor passwords require at least 15 characters.",
+      "Passwords used only in MFA may be shorter but must have at least eight characters."
+    ]
+  },
+  {
+    "id": "D03",
+    "query": "Can cloud-synced passkeys satisfy AAL3 if the cryptography is otherwise strong?",
+    "category": "constraints",
+    "source_pdf_page": 20,
+    "critical_clause": "syncable authenticators SHALL NOT be used at AAL3",
+    "source_section": "2.3.2",
+    "expected_points": [
+      "No; syncable authenticators require exportable private keys and cannot be used at AAL3."
+    ]
+  },
+  {
+    "id": "D04",
+    "query": "If a website offers face recognition, may it refuse customers who want a non-biometric login option?",
+    "category": "constraints",
+    "source_pdf_page": 43,
+    "critical_clause": "An alternative non-biometric authentication option SHALL always be provided",
+    "source_section": "3.2.3",
+    "expected_points": [
+      "An alternative non-biometric authentication option must always be provided."
+    ]
+  },
+  {
+    "id": "D05",
+    "query": "May a service authenticate people by recognising their voice instead of using their face or fingerprint?",
+    "category": "negation",
+    "source_pdf_page": 43,
+    "critical_clause": "Biometric comparison based on voice SHALL NOT be used",
+    "source_section": "3.2.3.2",
+    "expected_points": [
+      "Voice-based biometric comparison must not be used."
+    ]
+  },
+  {
+    "id": "D06",
+    "query": "For face recognition, is presentation attack detection merely recommended as it is for fingerprint and iris systems?",
+    "category": "exceptions",
+    "source_pdf_page": 43,
+    "critical_clause": "SHALL implement PAD for facial recognition",
+    "source_section": "3.2.3.2",
+    "expected_points": [
+      "PAD should be used for iris/fingerprint and must be used for facial recognition."
+    ]
+  },
+  {
+    "id": "D07",
+    "query": "May a password verifier demand a new password every ninety days when there is no evidence of compromise?",
+    "category": "negation",
+    "source_pdf_page": 25,
+    "critical_clause": "SHALL NOT require subscribers to change passwords periodically",
+    "source_section": "3.1.1.2",
+    "expected_points": [
+      "Periodic password changes must not be required.",
+      "A change must be forced when there is evidence of authenticator compromise."
+    ]
+  },
+  {
+    "id": "D08",
+    "query": "When checking a new password against a blocklist, should a dictionary word inside a longer passphrase cause rejection, or is the full password compared?",
+    "category": "distractor",
+    "source_pdf_page": 26,
+    "critical_clause": "The entire password SHALL be subject to comparison, not substrings or words",
+    "source_section": "3.1.1.2",
+    "expected_points": [
+      "Compare the entire password, not contained words or substrings."
+    ]
+  },
+  {
+    "id": "D09",
+    "query": "Must agencies permit one hundred consecutive failed sign-ins, or may they block an authenticator sooner?",
+    "category": "exceptions",
+    "source_pdf_page": 41,
+    "critical_clause": "agencies MAY impose lower limits",
+    "source_section": "3.2.2",
+    "expected_points": [
+      "100 is an upper bound; agencies may impose lower limits."
+    ]
+  },
+  {
+    "id": "D10",
+    "query": "When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?",
+    "category": "constraints",
+    "source_pdf_page": 33,
+    "critical_clause": "Generating a new authentication secret SHALL NOT reset the failed authentication count",
+    "source_section": "3.1.3.2",
+    "expected_points": [
+      "Generating a new authentication secret must not reset the failed-authentication count."
+    ]
+  },
+  {
+    "id": "D11",
+    "query": "Does a device-unlock PIN have to meet the fifteen-character password minimum, or can an activation secret be shorter?",
+    "category": "distractor",
+    "source_pdf_page": 49,
+    "critical_clause": "secrets to be at least four characters in length",
+    "source_section": "3.2.10",
+    "expected_points": [
+      "Activation secrets must be at least four characters and should be at least six.",
+      "They may be entirely numeric; the verifier-password minimum is a different requirement."
+    ]
+  },
+  {
+    "id": "D12",
+    "query": "Can a device allow one hundred wrong unlock PIN entries before disabling the authenticator?",
+    "category": "constraints",
+    "source_pdf_page": 49,
+    "critical_clause": "consecutive failed activation attempts using the authenticator to no more than 10",
+    "source_section": "3.2.10",
+    "expected_points": [
+      "Failed activation attempts must be limited to no more than ten; then the authenticator is disabled."
+    ]
+  },
+  {
+    "id": "D13",
+    "query": "If an issued recovery code is texted to a trusted recovery contact rather than directly to the subscriber, is it still limited to ten minutes?",
+    "category": "exceptions",
+    "source_pdf_page": 60,
+    "critical_clause": "validity time for recovery codes sent to recovery contacts MAY be extended by 24 hours",
+    "source_section": "4.2.1.3",
+    "expected_points": [
+      "The validity period may be extended by 24 hours.",
+      "For text messages to a recovery contact, the example maximum is 24 hours and ten minutes."
+    ]
+  },
+  {
+    "id": "D14",
+    "query": "May a saved recovery code be used again after it successfully recovers an account?",
+    "category": "constraints",
+    "source_pdf_page": 59,
+    "critical_clause": "CSP SHALL invalidate that recovery code and SHALL issue a new saved recovery code",
+    "source_section": "4.2.1.1",
+    "expected_points": [
+      "After use, invalidate the saved recovery code and issue a new one."
+    ]
+  },
+  {
+    "id": "D15",
+    "query": "Does activity in a logged-in session restart its overall timeout, or only the inactivity timeout?",
+    "category": "distractor",
+    "source_pdf_page": 67,
+    "critical_clause": "Session activity SHALL reset the inactivity timeout",
+    "source_section": "5.2",
+    "expected_points": [
+      "Session activity resets inactivity timeout.",
+      "Successful reauthentication resets both overall and inactivity timeouts."
+    ]
+  },
+  {
+    "id": "D16",
+    "query": "Can a session be assigned a higher authentication assurance level than the login event that created it?",
+    "category": "negation",
+    "source_pdf_page": 65,
+    "critical_clause": "SHALL NOT be considered at a higher AAL than the authentication event",
+    "source_section": "5.1",
+    "expected_points": [
+      "A session may have a lower AAL, but must not have a higher AAL than its originating authentication event."
+    ]
+  },
+  {
+    "id": "D17",
+    "query": "Are cryptographic proof-of-possession session secrets forbidden from persisting across restarts just like bearer-token session secrets?",
+    "category": "exceptions",
+    "source_pdf_page": 65,
+    "critical_clause": "Session secrets used with such proof of possession techniques MAY persist",
+    "source_section": "5.1",
+    "expected_points": [
+      "Proof-of-possession session secrets may persist, while session lifetime limits still apply."
+    ]
+  },
+  {
+    "id": "D18",
+    "query": "If a provider accepts SMS as a restricted authenticator, is warning subscribers sufficient without offering an unrestricted alternative?",
+    "category": "constraints",
+    "source_pdf_page": 49,
+    "critical_clause": "Offer subscribers at least one alternative authenticator that is not restricted",
+    "source_section": "3.2.9",
+    "expected_points": [
+      "No; an unrestricted alternative usable at the required AAL must be offered, alongside notice and other risk measures."
+    ]
+  },
+  {
+    "id": "D19",
+    "query": "When biometric comparison happens at a central verifier, may the sensor collect the sample before authenticating the sensor or endpoint?",
+    "category": "constraints",
+    "source_pdf_page": 44,
+    "critical_clause": "sensor or endpoint SHALL be authenticated before capturing the biometric sample",
+    "source_section": "3.2.3.3",
+    "expected_points": [
+      "Authenticate the sensor or endpoint before capturing the biometric sample."
+    ]
+  },
+  {
+    "id": "D20",
+    "query": "May a password policy mandate a mixture of uppercase letters, digits, and punctuation?",
+    "category": "negation",
+    "source_pdf_page": 25,
+    "critical_clause": "SHALL NOT impose other composition rules",
+    "source_section": "3.1.1.2",
+    "expected_points": [
+      "Password composition rules such as mixtures of character types must not be imposed."
+    ]
+  },
+  {
+    "id": "D21",
+    "query": "Are autofill and pasting passwords both mandatory with exactly the same strength of requirement?",
+    "category": "constraints",
+    "source_pdf_page": 26,
+    "critical_clause": "SHOULD permit claimants to use the",
+    "source_section": "3.1.1.2",
+    "expected_points": [
+      "Password managers and autofill must be allowed (SHALL).",
+      "Pasting should be permitted (SHOULD), a distinct normative strength."
+    ]
+  },
+  {
+    "id": "D22",
+    "query": "Does an out-of-band authentication channel have to terminate on a different physical device from the primary channel?",
+    "category": "exceptions",
+    "source_pdf_page": 31,
+    "critical_clause": "even if it terminates on the same device",
+    "source_section": "3.1.3.1",
+    "expected_points": [
+      "It may terminate on the same device if information does not leak between channels without claimant participation."
+    ]
+  },
+  {
+    "id": "D23",
+    "query": "For facial biometrics without presentation attack detection, may users make ten consecutive failed attempts before a delay is imposed?",
+    "category": "exceptions",
+    "source_pdf_page": 44,
+    "critical_clause": "no more than five consecutive failed authentication attempts or 10 consecutive failed attempts if PAD",
+    "source_section": "3.2.3.3",
+    "expected_points": [
+      "No more than five consecutive failures without PAD; ten is allowed with conforming PAD.",
+      "After the limit, a delay of at least 30 seconds applies before each further attempt."
+    ]
+  },
+  {
+    "id": "D24",
+    "query": "Can fingerprints alone authenticate a subscriber without any physical authenticator?",
+    "category": "constraints",
+    "source_pdf_page": 43,
+    "critical_clause": "Biometrics SHALL only be used as part of multi-factor authentication with a physical authenticator",
+    "source_section": "3.2.3",
+    "expected_points": [
+      "Biometrics may only be used as part of MFA with a physical authenticator."
+    ]
+  },
+  {
+    "id": "D25",
+    "query": "May we use a spoken passphrase as the biometric second factor when the user also presents a physical token?",
+    "category": "negation",
+    "source_pdf_page": 43,
+    "critical_clause": "Biometric comparison based on voice SHALL NOT be used",
+    "source_section": "3.2.3.2",
+    "expected_points": [
+      "Voice biometric comparison must not be used, even as a second factor."
+    ]
+  },
+  {
+    "id": "D26",
+    "query": "If checking fingerprints for liveness is only recommended, is detecting fake faces optional too?",
+    "category": "exceptions",
+    "source_pdf_page": 43,
+    "critical_clause": "SHALL implement PAD for facial recognition",
+    "source_section": "3.2.3.2",
+    "expected_points": [
+      "PAD is mandatory for facial recognition; it is recommended for fingerprints and iris."
+    ]
+  },
+  {
+    "id": "D27",
+    "query": "Can a facial-matching system use different decision thresholds for different demographic groups to achieve fairness?",
+    "category": "constraints",
+    "source_pdf_page": 43,
+    "critical_clause": "configured with a fixed threshold",
+    "source_section": "3.2.3.1",
+    "expected_points": [
+      "A fixed threshold must be used, not a separate threshold for each demographic."
+    ]
+  },
+  {
+    "id": "D28",
+    "query": "Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?",
+    "category": "exceptions",
+    "source_pdf_page": 45,
+    "critical_clause": "with explicit subscriber consent",
+    "source_section": "3.2.3.4",
+    "expected_points": [
+      "Local template adaptation is allowed; other research purposes require explicit subscriber consent."
+    ]
+  },
+  {
+    "id": "D29",
+    "query": "After a fingerprint sample has been used to update an authentication template, may the service keep the sample indefinitely for convenience?",
+    "category": "constraints",
+    "source_pdf_page": 45,
+    "critical_clause": "SHALL be erased immediately after any adaptation or research data has been derived",
+    "source_section": "3.2.3.4",
+    "expected_points": [
+      "Samples and biometric data derived from them must be erased immediately after adaptation/research data has been derived."
+    ]
+  },
+  {
+    "id": "D30",
+    "query": "If a customer has already unlocked their phone, can the website automatically treat that unlock as the activation step for authentication?",
+    "category": "exceptions",
+    "source_pdf_page": 50,
+    "critical_clause": "Submitting the activation factor SHALL be a separate operation from unlocking the host device",
+    "source_section": "3.2.10",
+    "expected_points": [
+      "Submission must be separate, although the same factor may be used; specific managed-device exceptions may apply."
+    ]
+  },
+  {
+    "id": "D31",
+    "query": "Must a person with only an AAL1 account first achieve AAL2 before registering a new authenticator capable of AAL2?",
+    "category": "exceptions",
+    "source_pdf_page": 55,
+    "critical_clause": "whichever is lower",
+    "source_section": "4.1.2.1",
+    "expected_points": [
+      "Use the lower of the account maximum AAL and the new authenticator maximum intended AAL; existing AAL1-only capability is an exception to the AAL2 example."
+    ]
+  },
+  {
+    "id": "D32",
+    "query": "If I forgot my password but can still sign in using another authenticator, is replacing the password classified as account recovery?",
+    "category": "distractor",
+    "source_pdf_page": 58,
+    "critical_clause": "rather than account recovery",
+    "source_section": "4.2",
+    "expected_points": [
+      "It is binding a new authenticator, not account recovery."
+    ]
+  },
+  {
+    "id": "D33",
+    "query": "Should every account event notification be mailed to the postal address even when electronic notification addresses are available?",
+    "category": "exceptions",
+    "source_pdf_page": 63,
+    "critical_clause": "Notifications SHALL be sent to all notification addresses except postal addresses",
+    "source_section": "4.6",
+    "expected_points": [
+      "Normally omit postal addresses; specific exceptions include no other address, AAL3 recovery, and the recovery-address-only case."
+    ]
+  },
+  {
+    "id": "D34",
+    "query": "If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?",
+    "category": "exceptions",
+    "source_pdf_page": 63,
+    "critical_clause": "only other notification address in the subscriber account is the address to which an issued recovery code was sent",
+    "source_section": "4.6",
+    "expected_points": [
+      "No; an account-recovery notice must also be sent to a postal address in this case."
+    ]
+  },
+  {
+    "id": "D35",
+    "query": "Can an OAuth access token alone demonstrate that the subscriber is still present in the application?",
+    "category": "negation",
+    "source_pdf_page": 66,
+    "critical_clause": "SHALL NOT interpret the presence of an access token as an indicator of the subscriber",
+    "source_section": "5.1.2",
+    "expected_points": [
+      "An access token alone cannot be interpreted as subscriber presence without other signals."
+    ]
+  },
+  {
+    "id": "D36",
+    "query": "If a cookie has an expiry timestamp, may the server rely on that to enforce the authenticated session timeout?",
+    "category": "constraints",
+    "source_pdf_page": 66,
+    "critical_clause": "SHALL NOT be relied upon to enforce session timeouts",
+    "source_section": "5.1.1",
+    "expected_points": [
+      "Cookie expiry must not be relied on to enforce session timeouts."
+    ]
+  },
+  {
+    "id": "D37",
+    "query": "Is setting the HttpOnly attribute on a session cookie compulsory in the same way as restricting it to HTTPS?",
+    "category": "constraints",
+    "source_pdf_page": 66,
+    "critical_clause": "SHOULD be tagged as inaccessible via JavaScript",
+    "source_section": "5.1.1",
+    "expected_points": [
+      "HTTPS access is SHALL; HttpOnly is SHOULD."
+    ]
+  },
+  {
+    "id": "D38",
+    "query": "If the identity-provider session is still active, does that automatically satisfy a relying party whose own session has expired?",
+    "category": "exceptions",
+    "source_pdf_page": 67,
+    "critical_clause": "RP SHALL be authoritative",
+    "source_section": "5.2",
+    "expected_points": [
+      "No; IdP and RP sessions are independent and the RP is authoritative on its reauthentication requirements."
+    ]
+  },
+  {
+    "id": "D39",
+    "query": "Are keystroke timing and location checks during an existing session forbidden because they are behavioral biometrics?",
+    "category": "exceptions",
+    "source_pdf_page": 68,
+    "critical_clause": "Behavioral biometric characteristics",
+    "source_section": "5.3",
+    "expected_points": [
+      "Behavioral characteristics can be used for session monitoring; collection/storage/processing must enter the privacy risk assessment."
+    ]
+  },
+  {
+    "id": "D40",
+    "query": "Can an AAL2 user reauthenticate after an inactivity timeout with only a password and an existing session secret?",
+    "category": "exceptions",
+    "source_pdf_page": 18,
+    "critical_clause": "When the inactivity timeout has occurred but the overall timeout has not yet occurred",
+    "source_section": "2.2.3",
+    "expected_points": [
+      "Yes, the verifier may permit a password or biometric comparison with the session secret only if the overall timeout has not occurred."
+    ]
+  },
+  {
+    "id": "D41",
+    "query": "For an AAL2 session that reached its overall timeout, is a password plus its old session secret enough for the simplified reauthentication exception?",
+    "category": "constraints",
+    "source_pdf_page": 18,
+    "critical_clause": "When the inactivity timeout has occurred but the overall timeout has not yet occurred",
+    "source_section": "2.2.3",
+    "expected_points": [
+      "The simplified exception requires that the overall timeout has not occurred."
+    ]
+  },
+  {
+    "id": "D42",
+    "query": "Can a public-facing service reject a personal authenticator simply because it lacks attestation support?",
+    "category": "constraints",
+    "source_pdf_page": 57,
+    "critical_clause": "lack of support for attestations SHOULD NOT block",
+    "source_section": "4.1.3",
+    "expected_points": [
+      "Lack of attestation support should not block authenticators for broad public-facing applications."
+    ]
+  },
+  {
+    "id": "D43",
+    "query": "What must an agency prepare if a telephone-based authentication method it accepts today might become unacceptable later?",
+    "category": "constraints",
+    "source_pdf_page": 49,
+    "critical_clause": "Develop a migration plan",
+    "source_section": "3.2.9",
+    "expected_points": [
+      "Develop a migration plan and include it in the Digital Identity Acceptance Statement."
+    ]
+  },
+  {
+    "id": "D44",
+    "query": "Are facial images and fingerprints considered secret values because they are used to authenticate people?",
+    "category": "distractor",
+    "source_pdf_page": 43,
+    "critical_clause": "Biometric characteristics do not constitute secrets",
+    "source_section": "3.2.3",
+    "expected_points": [
+      "They are not secrets; biometrics require limited use and additional safeguards."
+    ]
+  }
+]

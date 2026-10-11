@@ -1,0 +1,116 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-11T20:54:52.774362+00:00",
+  "evaluation_mode": "selected",
+  "executed_notebook_code_cells": 10,
+  "source_hash_verified": true,
+  "chunks": 409,
+  "queries": 5,
+  "verified_retrieval_recoveries": [
+    "D10",
+    "D28",
+    "D34"
+  ],
+  "gemini_answers": 10,
+  "answers_reused_from_exact_request_cache": 10,
+  "submission_experiment_complete": true,
+  "inspection_notes_match_current_outputs": true,
+  "candidate_and_prompt_controls_verified": true,
+  "timing_samples": 35,
+  "active_package_requirements_checked": 141,
+  "credential_scan": "No configured credential found in shareable files.",
+  "answer_checks": [
+    {
+      "query_id": "D10",
+      "variant": "baseline",
+      "words": 62,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D10",
+      "variant": "reranked",
+      "words": 15,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D28",
+      "variant": "baseline",
+      "words": 108,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D28",
+      "variant": "reranked",
+      "words": 107,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D34",
+      "variant": "baseline",
+      "words": 50,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D34",
+      "variant": "reranked",
+      "words": 48,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D03",
+      "variant": "baseline",
+      "words": 80,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D03",
+      "variant": "reranked",
+      "words": 51,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D05",
+      "variant": "baseline",
+      "words": 116,
+      "citations_in_context": true
+    },
+    {
+      "query_id": "D05",
+      "variant": "reranked",
+      "words": 99,
+      "citations_in_context": true
+    }
+  ],
+  "artifact_sha256": {
+    "RAG_Baseline_vs_Reranking.ipynb": "73d960831c2da99c97cbcc0e6ae8ae6a87d922138c6ecdedb7f75317e0dc040c",
+    "data/queries.json": "a6f8f1f5c705c53a09dabba810f9d39a573e075da9dd2625fdee8965fb6ff6cd",
+    "data/model_metadata.json": "cb384519f226a2c8705378057655a61f60e1d718651932e12417d879bf4dac58",
+    "data/source_metadata.json": "0641321569f8a74dcf5e20d41c834c826130a62ef8162f76b2e6d0111508b86a",
+    "requirements.txt": "d71d5ffd45c8f3afef4f581c609e72faed6c47833c3273df7b4aa4fe56832ef7",
+    "requirements.lock.txt": "dc4ee836fd78f5985d44e7f95bcf7560aefd367a0d8cb5b67633710beab1f9b6",
+    "requirements-report.txt": "34b54a5c84574b59f053142c9d26e3337f50d0e34f73c0376cffb5c28d9f965e",
+    "scripts/build_report.py": "005233202f3612dec272c1662cd55fcf642b14288f4c9ccaa4b32ea29fbb8c7e",
+    "scripts/run_notebook.py": "1bb9745c32859dbd2a145e6c2546b2ef8cce93dcef61cf5e692622647fe24c37",
+    "scripts/test_runtime_paths.py": "e6ce973db4a0a690ddcbf51321a610cc9a33a3b20b600fe06a6a7f243c0e2330",
+    "scripts/verify_submission.py": "e0da58015801497fceb88bf765f250c354d8eb314e11137189f6c97880046c62",
+    "results/index.faiss": "dbd457feeb783d7d5c778f2aefe7761244d1dd1576e8bcd8f71d09267902c2cc",
+    "results/query_summary.csv": "e4e588fa5b934c486773331f854aa57ae8a298db67aa2c1ef473fd782de9edb6",
+    "results/report_verification.json": "249dd9075af83565b3d78d9f7f88313e801f3a6843408bb1ef3ba8d15c0b776e",
+    "results/retrieval_results.json": "954a4e3193f14e4f09e54917effae6971b32ec28ed5bdb3a3b83839421a4e0d3",
+    "results/run_metadata.json": "782957fdad74874d22a0e62d406bd73b065b4f8319d9f8c8a264974982c5b73d",
+    "results/answer_review.csv": "643c2243fbddf62708eeb74b6b3ce9d620c38b34ae77fd8b2167ab734f029e99",
+    "results/answer_cache.json": "30449090a2ba6ed4a76828337af66af3975b9caba0fbc065959b516e2217a528",
+    "results/rankings.csv": "432824020f2794106a564b907a7e3e5cfe2aa9be9bd5f2caf5b4b6d1766eb175",
+    "results/notebook_checks.json": "5c10be15720d09443cbb7f99ed704c10eeffbc41fe6ed01166f5ea5a8b02931d",
+    "results/discovery_results.json": "cc679ea991ca9fbd41cb0c78f30b5be8bb25bc4605b25ba65878aea965ce7d62",
+    "results/embeddings.npy": "cee51db421cf3ca7e6b54892271498e412209582f893e392d70c23f9baef56a3",
+    "results/observations.json": "3000eb827311879f6d2def173d4b2f4ca0fe07179d563ece82c78fac44b73a51",
+    "results/latency_samples.csv": "7b51e781427e844323aca60bbfc4dba056ef715fe585aad792fc0a8e3a6e3b19",
+    "results/answers.json": "9d5fcd4258c7eebd11fd1817ff22d425aaff20a9ba723a12aab126f7aaf8deef",
+    "results/discovery_metadata.json": "5f8198255279c3bf6e1074868ecad6fa4f1386e63c1dd500df6a1592a16b12c5",
+    "results/latency_summary.csv": "c04900f56e12903139832e08f545d0e07d3a518b35733418b11293af48fbbf31",
+    "results/chunks.json": "3259aa7308d6bce29382c27057974569281c9f4e016a69088758c44502850a85",
+    "results/selection_audit.json": "b1e0e9b7f1997c5436936e45a12537edab635c8e85db9f7c68484e11cc1c72c6"
+  },
+  "scope": "Structural and provenance checks; semantic answer judgments require source inspection."
+}

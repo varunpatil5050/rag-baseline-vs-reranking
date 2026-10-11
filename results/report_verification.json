@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "pages": 3,
+  "exact_questions": 3,
+  "complete_saved_answers": 6,
+  "required_analysis_topics": 4,
+  "current_latency_rows": 5,
+  "credential_scan": "No configured credential in report content.",
+  "artifact_sha256": {
+    "REPORT.md": "bfaf7fa28a621ce9e9eda3f601c5720ae0b6dbb29af59fd81bd6295533960136",
+    "output/docx/RAG_Comparison_Report.docx": "f69ffdc37c8801f08c2dd6119417497cb800bf639380cf889b3b5bff4ba7b113",
+    "output/pdf/RAG_Comparison_Report.pdf": "13aed7bfa8cc092b7c0ec700ff19b3b7768fdac7b6037213d7e88886aa15207c"
+  }
+}

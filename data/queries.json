@@ -1,0 +1,67 @@
+[
+  {
+    "id": "D10",
+    "query": "When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?",
+    "category": "Negation and constraints / recovery-code distractor",
+    "source_pdf_page": 33,
+    "critical_clause": "Generating a new authentication secret SHALL NOT reset the failed authentication count",
+    "source_section": "3.1.3.2",
+    "expected_points": [
+      "Generating a new authentication secret must not reset the failed-authentication count."
+    ],
+    "evaluation_role": "failure_recovery",
+    "selection_note": "Baseline context contains recovery-code rules, omitting the out-of-band failure-counter constraint."
+  },
+  {
+    "id": "D28",
+    "query": "Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?",
+    "category": "Document-specific permission / biometric distractor",
+    "source_pdf_page": 45,
+    "critical_clause": "with explicit subscriber consent",
+    "source_section": "3.2.3.4",
+    "expected_points": [
+      "Local template adaptation is allowed; other research purposes require explicit subscriber consent."
+    ],
+    "evaluation_role": "failure_recovery",
+    "selection_note": "Baseline context discusses facial-image capture and biometric security but omits the sample-reuse permission and consent condition."
+  },
+  {
+    "id": "D34",
+    "query": "If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?",
+    "category": "Exceptions and corner cases / notification vs code delivery",
+    "source_pdf_page": 63,
+    "critical_clause": "only other notification address in the subscriber account is the address to which an issued recovery code was sent",
+    "source_section": "4.6",
+    "expected_points": [
+      "No; an account-recovery notice must also be sent to a postal address in this case."
+    ],
+    "evaluation_role": "failure_recovery",
+    "selection_note": "Baseline context discusses delivery/validity of recovery codes, omitting the separate postal-notification exception."
+  },
+  {
+    "id": "D03",
+    "query": "Can cloud-synced passkeys satisfy AAL3 if the cryptography is otherwise strong?",
+    "category": "Equivalent-evidence control",
+    "source_pdf_page": 20,
+    "critical_clause": "syncable authenticators SHALL NOT be used at AAL3",
+    "source_section": "2.3.2",
+    "expected_points": [
+      "No; syncable authenticators require exportable private keys and cannot be used at AAL3."
+    ],
+    "evaluation_role": "supported_baseline_control",
+    "selection_note": "The primary clause moves 4 to 2, but baseline rank 2 already contains the equivalent AAL3 syncing prohibition; do not call this a baseline failure."
+  },
+  {
+    "id": "D05",
+    "query": "May a service authenticate people by recognising their voice instead of using their face or fingerprint?",
+    "category": "Negation / missing-candidate limitation",
+    "source_pdf_page": 43,
+    "critical_clause": "Biometric comparison based on voice SHALL NOT be used",
+    "source_section": "3.2.3.2",
+    "expected_points": [
+      "Voice-based biometric comparison must not be used."
+    ],
+    "evaluation_role": "top10_recall_limitation",
+    "selection_note": "The voice-biometric prohibition is absent from the original Top 10, so re-ranking cannot retrieve it."
+  }
+]

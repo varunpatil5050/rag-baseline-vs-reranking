@@ -1,0 +1,248 @@
+{
+  "d09a54cd2b0d071f2cc606fd922cd09043df66175ee27ccb83a0408e711738a3": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "The provided excerpts do not establish whether a failed-attempt counter can start over when a user requests a fresh out-of-band verification code. The excerpts discuss out-of-band authenticators and recovery code requirements, including validity periods, format, and throttling under Sec. 3.2.2 [p059_c03, p031_c04, p059_c02], but they completely lack any mention of a failed-attempt counter or the conditions under which it may be reset.",
+    "generation_ms": 11890.363208018243,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 111,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 609,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 609
+        }
+      ],
+      "thoughts_token_count": 504,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1224,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:44:05.549035+00:00"
+  },
+  "45f6bcb498ac643773e5d7f928e3b068d90ac1b17f3b81d42c9e189dc5df3189": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "No. Generating a new authentication secret SHALL NOT reset the failed authentication count [p033_c02, p033_c03].",
+    "generation_ms": 9181.995541002834,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 33,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 613,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 613
+        }
+      ],
+      "thoughts_token_count": 347,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 993,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:44:14.731939+00:00"
+  },
+  "c117bd14007987dd08bc0cf9fe7cd28b135493240e7072658c64eff22697ce41": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "The provided excerpts do not establish whether face images collected during sign-in can be reused to improve the matching template or for research, nor do they establish what permission is needed. \n\nThe excerpts only state that facial images do not constitute secrets and can often be obtained without consent [p043_c01], detail usability considerations that affect facial recognition accuracy (e.g., artifacts, lighting, expressions, poses) [p089_c01], and define central comparison requirements\u2014including that sensors/endpoints SHALL be authenticated, appropriate controls SHALL be implemented for sensitive personal information, and verifiers MAY limit centrally stored templates to particular sensors [p044_c04]. Any provisions regarding the reuse of sign-in biometric samples or required permissions are missing.",
+    "generation_ms": 12929.634041007375,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 159,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 620,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 620
+        }
+      ],
+      "thoughts_token_count": 719,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1498,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:44:27.662706+00:00"
+  },
+  "e2dfbe746e71ae735e6094d8f6833b0236dcba8ea280bd07f8014f69e8e0cc2f": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "Biometric samples collected during the authentication process MAY be used locally within the authenticator or verifier performing the biometric comparison to update templates (to compensate for changes in subscriber characteristics) or for other research purposes [p045_c01]. \n\nRegarding permission:\n* For research purposes, \"explicit subscriber consent\" is required [p045_c01].\n* For updating templates to compensate for changes in subscriber characteristics, the text does not state that permission is needed [p045_c01].\n\nAdditionally, the samples and any derived biometric data SHALL be erased immediately after adaptation or research data has been derived, and an allowable time limit for adaptation SHALL be established and enforced by the authenticator or CSP [p045_c01].",
+    "generation_ms": 25144.8110419733,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 161,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 610,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 610
+        }
+      ],
+      "thoughts_token_count": 870,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1641,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:44:52.808736+00:00"
+  },
+  "2747d17568d88f35ea135bc68a3bd5ee0d388964900ac8101104f39f69a7f620": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "The provided excerpts do not establish the answer. They do not contain any information or requirements regarding postal recovery notices, nor do they state whether a provider can skip sending a postal recovery notice if the only electronic notification address was used to receive a recovery code [p059_c02, p059_c03, p060_c01].",
+    "generation_ms": 18736.28979100613,
+    "attempts": 1,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 77,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 734,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 734
+        }
+      ],
+      "thoughts_token_count": 527,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1338,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:50:52.427124+00:00"
+  },
+  "0397d9b9e36fb3a03e0da704a8d7303a0b6e02e1965aa35dbe77dac597828b62": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "No, the provider cannot skip sending a postal recovery notice [p063_c02]. \n\nAccording to the excerpt, account recovery notifications SHALL also be sent to a postal address if the only other notification address in the subscriber account is the address to which an issued recovery code was sent [p063_c02].",
+    "generation_ms": 4661.568624986103,
+    "attempts": 1,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 70,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 710,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 710
+        }
+      ],
+      "thoughts_token_count": 485,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1265,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:50:57.089509+00:00"
+  },
+  "eac6d5f62cfde9edb59fcef53a8f2ae3fbc7435318d912138df3f4cb3721b169": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "No. Syncing authentication keys (such as via a cloud provider sync fabric) inherently means that the key can be exported [p038_c02, p103_c02]. Even if the cryptography meets other requirements, \"syncing violates the non-exportability requirements of AAL3\" [p103_c02]. \n\nWhile authentication at AAL2 may be supported using syncable authenticators subject to specified requirements, syncing cannot satisfy AAL3 [p103_c02]. Only similar protocols using keys that are not stored in an exportable manner and meet the other requirements of AAL3 may be used [p103_c02].",
+    "generation_ms": 13896.415833005449,
+    "attempts": 2,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 149,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 683,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 683
+        }
+      ],
+      "thoughts_token_count": 682,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1514,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:51:10.987137+00:00"
+  },
+  "39a7fca7a3f3b3818ed0ffd793d2971a2cdd2d01b7d37c2d9de324583c57d4d4": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "No. Cryptographic authenticators that manage their authentication keys using a sync fabric, such as a cloud provider, are referred to as syncable authenticators [p038_c02]. Because syncable authenticators require the private key to be exportable, syncable authenticators SHALL NOT be used at AAL3, regardless of whether the cryptography is otherwise strong [p020_c01].",
+    "generation_ms": 47519.63758299826,
+    "attempts": 2,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 85,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 718,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 718
+        }
+      ],
+      "thoughts_token_count": 597,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1400,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:52:48.887580+00:00"
+  },
+  "562f2e0112b67732d998c1773e7ec5f0b7d15f74f233c8cf19d407e329f387b4": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "Yes, voice patterns are recognized as a biometric characteristic, and the limited use of biometrics for authentication is supported [p042_c02, p043_c02]. However, a service may only do so subject to strict requirements:\n\n* Biometrics SHALL only be used as part of multi-factor authentication with a physical authenticator (i.e., \u201csomething you have\u201d) [p043_c02].\n* The biometric characteristic SHALL be presented and compared for each authentication operation [p043_c02].\n* An alternative non-biometric authentication option SHALL always be provided to the subscriber [p043_c02].\n* The biometric system SHALL operate with a False Match Rate (FMR) of 1 in 10,000 or better for all demographic groups [p043_c02].\n* Biometric data SHALL be treated and secured as sensitive personal information [p043_c02].",
+    "generation_ms": 29658.481208985904,
+    "attempts": 2,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 212,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 717,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 717
+        }
+      ],
+      "thoughts_token_count": 949,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1878,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:53:18.547681+00:00"
+  },
+  "865f8327d32b17082845566dcbbc4b818b8e8dc81719617f906bdaa834d00352": {
+    "model_returned": "gemini-3.8-flash",
+    "answer": "The provided excerpts define biometrics as the automated recognition of individuals based on biological and behavioral characteristics, listing \"voice patterns\" alongside \"fingerprints\" and \"facial features\" [p042_c02]. Furthermore, the text notes that fingerprint collection and facial matching can present suitability issues for certain user populations [p090_c02]. \n\nHowever, the excerpts do not establish whether a service is formally permitted (e.g., via a normative \"MAY\") to authenticate people using voice recognition instead of a face or fingerprint, nor do they state the requirements or constraints for using voice as an authenticator. The specific rules governing acceptable biometric authenticators are missing [p042_c02, p090_c02].",
+    "generation_ms": 7331.00158299203,
+    "attempts": 1,
+    "usage": {
+      "cache_tokens_details": null,
+      "cached_content_token_count": null,
+      "candidates_token_count": 157,
+      "candidates_tokens_details": null,
+      "prompt_token_count": 707,
+      "prompt_tokens_details": [
+        {
+          "modality": "TEXT",
+          "token_count": 707
+        }
+      ],
+      "thoughts_token_count": 679,
+      "tool_use_prompt_token_count": null,
+      "tool_use_prompt_tokens_details": null,
+      "total_token_count": 1543,
+      "traffic_type": null
+    },
+    "generated_utc": "2026-10-11T19:53:25.880185+00:00"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "query_file_sha256": "a6f8f1f5c705c53a09dabba810f9d39a573e075da9dd2625fdee8965fb6ff6cd",
+  "notebook_code_sha256": "2a97cb2cc1e1f88090eae45e69eec5bd7137222a679faf9b6eb72ef344e0d58a",
+  "verified_retrieval_recoveries": [
+    "D10",
+    "D28",
+    "D34"
+  ],
+  "matching_answers": 10,
+  "expected_answers": 10,
+  "inspection_notes_match_current_outputs": true
+}

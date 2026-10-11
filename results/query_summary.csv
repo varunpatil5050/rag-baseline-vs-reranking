@@ -1,0 +1,6 @@
+query_id,role,category,tracked_chunk_id,evidence_before,evidence_after,clause_recovered,verified_failure_recovery,query
+D10,failure_recovery,Negation and constraints / recovery-code distractor,p033_c03,4.0,1.0,True,True,"When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?"
+D28,failure_recovery,Document-specific permission / biometric distractor,p045_c01,5.0,2.0,True,True,"Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?"
+D34,failure_recovery,Exceptions and corner cases / notification vs code delivery,p063_c02,6.0,1.0,True,True,"If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?"
+D03,supported_baseline_control,Equivalent-evidence control,p020_c01,4.0,2.0,True,False,Can cloud-synced passkeys satisfy AAL3 if the cryptography is otherwise strong?
+D05,top10_recall_limitation,Negation / missing-candidate limitation,,,,False,False,May a service authenticate people by recognising their voice instead of using their face or fingerprint?

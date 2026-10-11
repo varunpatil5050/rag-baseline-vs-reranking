@@ -1,0 +1,36 @@
+{
+  "selection_process": "44 pre-recorded discovery questions were evaluated using the same fixed corpus and model settings. Designated-clause promotion was manually checked against baseline Top 3 for equivalent evidence.",
+  "accepted_failure_recovery_ids": [
+    "D10",
+    "D28",
+    "D34"
+  ],
+  "rejected_apparent_recoveries": [
+    {
+      "id": "D03",
+      "reason": "p103_c02 is baseline rank 2 and already states that syncing violates AAL3 non-exportability."
+    },
+    {
+      "id": "D04",
+      "reason": "p090_c01 is baseline rank 1 and already requires an alternative authentication method."
+    },
+    {
+      "id": "D42",
+      "reason": "p105_c01 is baseline rank 1 and already gives the parallel public-facing rule for syncable authenticators. Excluded conservatively."
+    }
+  ],
+  "controls": {
+    "D03": "Equivalent evidence was already available in baseline Top 3.",
+    "D05": "Critical voice-biometric prohibition is absent from original Top 10."
+  },
+  "source_visual_checks_pdf_pages": [
+    20,
+    31,
+    33,
+    43,
+    45,
+    63,
+    103
+  ],
+  "answer_quality_status": "All ten Gemini responses generated and inspected. Three accepted recoveries improve answer completeness; control and recall limitation are documented in observations.json."
+}

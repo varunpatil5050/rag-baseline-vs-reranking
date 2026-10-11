@@ -1,0 +1,10 @@
+.venv/
+.cache/
+.env
+.env.*
+!.env.example
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+tmp/
+/RAG_LMA_Assignment_v1.pdf

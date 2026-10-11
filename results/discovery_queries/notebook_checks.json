@@ -1,0 +1,9 @@
+{
+  "status": "answers_incomplete",
+  "query_file_sha256": "55caee318ef56c1e27e460e236f520fe5f602e0b38538c2cbf049887f933eef9",
+  "notebook_code_sha256": "2a97cb2cc1e1f88090eae45e69eec5bd7137222a679faf9b6eb72ef344e0d58a",
+  "verified_retrieval_recoveries": [],
+  "matching_answers": 0,
+  "expected_answers": 88,
+  "inspection_notes_match_current_outputs": null
+}

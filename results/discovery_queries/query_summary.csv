@@ -1,0 +1,45 @@
+query_id,role,category,tracked_chunk_id,evidence_before,evidence_after,clause_recovered,verified_failure_recovery,query
+D01,exploratory_unreviewed,exceptions,p031_c03,1.0,1.0,False,False,"If email is forbidden for out-of-band authentication, can it still deliver account recovery or address-validation codes?"
+D02,exploratory_unreviewed,exceptions,p025_c02,3.0,1.0,False,False,Must every password be at least fifteen characters even when it is used only as one factor in MFA?
+D03,exploratory_unreviewed,constraints,p020_c01,4.0,2.0,True,False,Can cloud-synced passkeys satisfy AAL3 if the cryptography is otherwise strong?
+D04,exploratory_unreviewed,constraints,p043_c02,5.0,2.0,True,False,"If a website offers face recognition, may it refuse customers who want a non-biometric login option?"
+D05,exploratory_unreviewed,negation,,,,False,False,May a service authenticate people by recognising their voice instead of using their face or fingerprint?
+D06,exploratory_unreviewed,exceptions,p043_c04,1.0,1.0,False,False,"For face recognition, is presentation attack detection merely recommended as it is for fingerprint and iris systems?"
+D07,exploratory_unreviewed,negation,,,,False,False,May a password verifier demand a new password every ninety days when there is no evidence of compromise?
+D08,exploratory_unreviewed,distractor,p026_c02,2.0,1.0,False,False,"When checking a new password against a blocklist, should a dictionary word inside a longer passphrase cause rejection, or is the full password compared?"
+D09,exploratory_unreviewed,exceptions,p041_c03,1.0,3.0,False,False,"Must agencies permit one hundred consecutive failed sign-ins, or may they block an authenticator sooner?"
+D10,exploratory_unreviewed,constraints,p033_c03,4.0,1.0,True,False,"When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?"
+D11,exploratory_unreviewed,distractor,p049_c02,1.0,2.0,False,False,"Does a device-unlock PIN have to meet the fifteen-character password minimum, or can an activation secret be shorter?"
+D12,exploratory_unreviewed,constraints,p049_c03,1.0,1.0,False,False,Can a device allow one hundred wrong unlock PIN entries before disabling the authenticator?
+D13,exploratory_unreviewed,exceptions,p060_c01,1.0,1.0,False,False,"If an issued recovery code is texted to a trusted recovery contact rather than directly to the subscriber, is it still limited to ten minutes?"
+D14,exploratory_unreviewed,constraints,p059_c01,1.0,1.0,False,False,May a saved recovery code be used again after it successfully recovers an account?
+D15,exploratory_unreviewed,distractor,p067_c02,2.0,1.0,False,False,"Does activity in a logged-in session restart its overall timeout, or only the inactivity timeout?"
+D16,exploratory_unreviewed,negation,,,,False,False,Can a session be assigned a higher authentication assurance level than the login event that created it?
+D17,exploratory_unreviewed,exceptions,p065_c01,1.0,1.0,False,False,Are cryptographic proof-of-possession session secrets forbidden from persisting across restarts just like bearer-token session secrets?
+D18,exploratory_unreviewed,constraints,p049_c01,1.0,1.0,False,False,"If a provider accepts SMS as a restricted authenticator, is warning subscribers sufficient without offering an unrestricted alternative?"
+D19,exploratory_unreviewed,constraints,p044_c04,1.0,1.0,False,False,"When biometric comparison happens at a central verifier, may the sensor collect the sample before authenticating the sensor or endpoint?"
+D20,exploratory_unreviewed,negation,,,,False,False,"May a password policy mandate a mixture of uppercase letters, digits, and punctuation?"
+D21,exploratory_unreviewed,constraints,p026_c04,1.0,1.0,False,False,Are autofill and pasting passwords both mandatory with exactly the same strength of requirement?
+D22,exploratory_unreviewed,exceptions,p031_c02,2.0,2.0,False,False,Does an out-of-band authentication channel have to terminate on a different physical device from the primary channel?
+D23,exploratory_unreviewed,exceptions,p044_c01,1.0,1.0,False,False,"For facial biometrics without presentation attack detection, may users make ten consecutive failed attempts before a delay is imposed?"
+D24,exploratory_unreviewed,constraints,p043_c02,3.0,3.0,False,False,Can fingerprints alone authenticate a subscriber without any physical authenticator?
+D25,exploratory_unreviewed,negation,,,,False,False,May we use a spoken passphrase as the biometric second factor when the user also presents a physical token?
+D26,exploratory_unreviewed,exceptions,,,,False,False,"If checking fingerprints for liveness is only recommended, is detecting fake faces optional too?"
+D27,exploratory_unreviewed,constraints,p043_c04,8.0,1.0,False,False,Can a facial-matching system use different decision thresholds for different demographic groups to achieve fairness?
+D28,exploratory_unreviewed,exceptions,p045_c01,5.0,2.0,True,False,"Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?"
+D29,exploratory_unreviewed,constraints,p045_c01,1.0,1.0,False,False,"After a fingerprint sample has been used to update an authentication template, may the service keep the sample indefinitely for convenience?"
+D30,exploratory_unreviewed,exceptions,p050_c01,1.0,1.0,False,False,"If a customer has already unlocked their phone, can the website automatically treat that unlock as the activation step for authentication?"
+D31,exploratory_unreviewed,exceptions,,,,False,False,Must a person with only an AAL1 account first achieve AAL2 before registering a new authenticator capable of AAL2?
+D32,exploratory_unreviewed,distractor,p058_c02,1.0,1.0,False,False,"If I forgot my password but can still sign in using another authenticator, is replacing the password classified as account recovery?"
+D33,exploratory_unreviewed,exceptions,p063_c02,1.0,1.0,False,False,Should every account event notification be mailed to the postal address even when electronic notification addresses are available?
+D34,exploratory_unreviewed,exceptions,p063_c02,6.0,1.0,True,False,"If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?"
+D35,exploratory_unreviewed,negation,p066_c03,1.0,1.0,False,False,Can an OAuth access token alone demonstrate that the subscriber is still present in the application?
+D36,exploratory_unreviewed,constraints,p066_c02,3.0,1.0,False,False,"If a cookie has an expiry timestamp, may the server rely on that to enforce the authenticated session timeout?"
+D37,exploratory_unreviewed,constraints,p066_c02,1.0,1.0,False,False,Is setting the HttpOnly attribute on a session cookie compulsory in the same way as restricting it to HTTPS?
+D38,exploratory_unreviewed,exceptions,p067_c05,1.0,1.0,False,False,"If the identity-provider session is still active, does that automatically satisfy a relying party whose own session has expired?"
+D39,exploratory_unreviewed,exceptions,p068_c01,1.0,2.0,False,False,Are keystroke timing and location checks during an existing session forbidden because they are behavioral biometrics?
+D40,exploratory_unreviewed,exceptions,p018_c04,1.0,1.0,False,False,Can an AAL2 user reauthenticate after an inactivity timeout with only a password and an existing session secret?
+D41,exploratory_unreviewed,constraints,p018_c04,1.0,1.0,False,False,"For an AAL2 session that reached its overall timeout, is a password plus its old session secret enough for the simplified reauthentication exception?"
+D42,exploratory_unreviewed,constraints,p057_c04,5.0,1.0,True,False,Can a public-facing service reject a personal authenticator simply because it lacks attestation support?
+D43,exploratory_unreviewed,constraints,,,,False,False,What must an agency prepare if a telephone-based authentication method it accepts today might become unacceptable later?
+D44,exploratory_unreviewed,distractor,p043_c01,1.0,1.0,False,False,Are facial images and fingerprints considered secret values because they are used to authenticate people?

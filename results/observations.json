@@ -1,0 +1,109 @@
+{
+  "purpose": "Observed output notes for student verification; not a submission report.",
+  "observations": [
+    {
+      "query_id": "D10",
+      "role": "failure_recovery",
+      "tracked_chunk": "p033_c03",
+      "rank_before": 4,
+      "rank_after": 1,
+      "baseline": "Explicitly states the supplied excerpts do not establish whether the failed-attempt counter can reset.",
+      "reranked": "Correctly states that generating a new authentication secret must not reset the failed-authentication count.",
+      "answer_completeness_improved": true
+    },
+    {
+      "query_id": "D28",
+      "role": "failure_recovery",
+      "tracked_chunk": "p045_c01",
+      "rank_before": 5,
+      "rank_after": 2,
+      "baseline": "Explicitly states that reuse of sign-in samples and required permission are absent from the excerpts.",
+      "reranked": "Correctly distinguishes local template adaptation from other research requiring explicit subscriber consent, and mentions erasure/time-limit requirements.",
+      "answer_completeness_improved": true
+    },
+    {
+      "query_id": "D34",
+      "role": "failure_recovery",
+      "tracked_chunk": "p063_c02",
+      "rank_before": 6,
+      "rank_after": 1,
+      "baseline": "Explicitly states that postal recovery-notice requirements are absent from the excerpts.",
+      "reranked": "Correctly identifies the mandatory postal recovery notification when the only other notification address received the issued recovery code.",
+      "answer_completeness_improved": true
+    },
+    {
+      "query_id": "D03",
+      "role": "supported_baseline_control",
+      "baseline": "Correctly rejects synced passkeys at AAL3 using the equivalent non-exportability rule in p103_c02, originally rank 2.",
+      "reranked": "Correctly rejects synced passkeys using the explicit prohibition in p020_c01.",
+      "answer_completeness_improved": false,
+      "note": "Promotion of the designated clause is not a genuine failure recovery because equivalent evidence was already available."
+    },
+    {
+      "query_id": "D05",
+      "role": "top10_recall_limitation",
+      "baseline": "Incorrectly says voice biometric authentication is allowed subject to general biometric conditions. This conflicts with the prohibition on PDF page 43.",
+      "reranked": "Abstains because the selected excerpts do not establish whether voice biometric authentication is permitted.",
+      "critical_evidence_recovered": false,
+      "note": "Neither original nor re-ranked Top 10 includes p043_c04 containing the voice prohibition. Abstention is better grounded but does not recover the missing rule."
+    }
+  ],
+  "inspected_output_fingerprints": {
+    "source_sha256": "d9ab89576b5ae2cfb3ba37781110788dea27a85a5079496dbfc1a79834670afd",
+    "corpus_sha256": "0b6e03b2116243b23953071a8179a4d203e3f1663a2eda2cb59594e9e94de800",
+    "query_file_sha256": "a6f8f1f5c705c53a09dabba810f9d39a573e075da9dd2625fdee8965fb6ff6cd",
+    "retrieval_models": {
+      "bi_encoder": {
+        "name": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+      },
+      "cross_encoder": {
+        "name": "cross-encoder/ms-marco-MiniLM-L6-v2",
+        "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+      }
+    },
+    "answer_fingerprints": {
+      "D10/baseline": {
+        "request_sha256": "d09a54cd2b0d071f2cc606fd922cd09043df66175ee27ccb83a0408e711738a3",
+        "answer_sha256": "3a3642619a4723fe106196741e05f6f680de5a592e9cfbfc40a948fecea4f3c8"
+      },
+      "D10/reranked": {
+        "request_sha256": "45f6bcb498ac643773e5d7f928e3b068d90ac1b17f3b81d42c9e189dc5df3189",
+        "answer_sha256": "fab41e6a31cf1392ebb64797b155ce036180c6747dac808b26296754e5ca9ff9"
+      },
+      "D28/baseline": {
+        "request_sha256": "c117bd14007987dd08bc0cf9fe7cd28b135493240e7072658c64eff22697ce41",
+        "answer_sha256": "8f22ec1c62a78f31309348d00c1d68b993995d8ffb4c946deb1d7556f1da9bee"
+      },
+      "D28/reranked": {
+        "request_sha256": "e2dfbe746e71ae735e6094d8f6833b0236dcba8ea280bd07f8014f69e8e0cc2f",
+        "answer_sha256": "31c948b76edff444d245006070dec960d0d345a167ea86572f7d3559d5fa1480"
+      },
+      "D34/baseline": {
+        "request_sha256": "2747d17568d88f35ea135bc68a3bd5ee0d388964900ac8101104f39f69a7f620",
+        "answer_sha256": "1299a5892914f6fa67d2c18946a3347cb4fc87db4f597b91f991f6c8acadad8e"
+      },
+      "D34/reranked": {
+        "request_sha256": "0397d9b9e36fb3a03e0da704a8d7303a0b6e02e1965aa35dbe77dac597828b62",
+        "answer_sha256": "dfe372eef05eb4dd7abd22e30a79bb9b63bc1b4cdc33b32b1f8b1a2cc583cb41"
+      },
+      "D03/baseline": {
+        "request_sha256": "eac6d5f62cfde9edb59fcef53a8f2ae3fbc7435318d912138df3f4cb3721b169",
+        "answer_sha256": "f4a514bf5e3d46f0411131801f64cf0372d35d6c140ee3c85c698f293080bcdf"
+      },
+      "D03/reranked": {
+        "request_sha256": "39a7fca7a3f3b3818ed0ffd793d2971a2cdd2d01b7d37c2d9de324583c57d4d4",
+        "answer_sha256": "762719a5917a5e163ab3132f628354b65db3914b3660c3d9d2dd44b650531159"
+      },
+      "D05/baseline": {
+        "request_sha256": "562f2e0112b67732d998c1773e7ec5f0b7d15f74f233c8cf19d407e329f387b4",
+        "answer_sha256": "fa0c5e07996123aec3d70b26f2f7ab86477f71f7ecf414e32046819b574eedcb"
+      },
+      "D05/reranked": {
+        "request_sha256": "865f8327d32b17082845566dcbbc4b818b8e8dc81719617f906bdaa834d00352",
+        "answer_sha256": "9c02a4fff7566e835db5fc7f0669eb1d69ffb488fb966e8fbc495ddf2a56bacc"
+      }
+    },
+    "retrieval_evidence_sha256": "2d00959b31605ed3f7bc3953a5773129e77ec7804fd662b0de6b0d496d29f33d"
+  }
+}
