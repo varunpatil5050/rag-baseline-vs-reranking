@@ -14,10 +14,6 @@ latency measurements, and saved execution outputs.
 ## Report
 
 - [LaTeX report (PDF)](output/pdf/RAG_Comparison_Report_LaTeX.pdf)
-- [Editable LaTeX source](output/latex/RAG_Comparison_Report.tex)
-- [Original PDF report](output/pdf/RAG_Comparison_Report.pdf)
-- [Original Word report](output/docx/RAG_Comparison_Report.docx)
-- [Original report text](REPORT.md)
 
 The report covers architecture, three document-specific recovery cases with actual
 answer pairs, measured latency, and scaling. It was prepared with AI assistance.
@@ -26,24 +22,10 @@ own understanding. Use the saved evidence to write the explanatory narrative
 independently before submission. Formatting or intentional language mistakes do not
 change the report's AI-assisted provenance.
 
-The LaTeX version is a standalone source with no external images or data files.
-Open it in the built-in LaTeX editor for an editable source and live PDF preview,
-then export the compiled PDF. Its six-page layout uses reference-matched typography,
-an opening abstract and spacious title,
-all six recovery-case answers, explicit failure types, three exact NIST excerpts,
-rank shifts, the latency table, a closing takeaway, and linked references.
+The six-page PDF includes an abstract, all six recovery-case answers, explicit
+failure types, three exact NIST excerpts, rank shifts, the latency table,
+a closing takeaway, and linked references.
 results/latex_report_verification.json records its content checks and file hashes.
-The LaTeX/PDF pair is the current report presentation; the earlier Word and Markdown
-versions are retained for reference.
-
-The optional Word/Markdown report builder reads the saved experiment without calling Gemini:
-
-    python -m pip install -r requirements-report.txt
-    python scripts/build_report.py
-
-It rebuilds the Markdown and Word files, independently of the LaTeX version;
-export the Word version to PDF separately.
-Preserve your own revisions before rebuilding, because generated report files are overwritten.
 
 ## Files
 
@@ -54,12 +36,10 @@ Preserve your own revisions before rebuilding, because generated report files ar
 - **data/queries.json** — selected queries and document-grounded expected evidence.
 - **data/discovery_queries.json** and **results/discovery_results.json** — complete exploratory queries and observed rankings, preserving selection history.
 - **results/** — candidates, selected context, timings, actual answers, and runtime metadata.
-- **REPORT_GUIDE.md** — prompts for the student-authored report.
-- **REPORT.md** and **output/** — report text, PDFs, and editable LaTeX and Word versions.
+- **output/pdf/RAG_Comparison_Report_LaTeX.pdf** — the final report.
 - **scripts/run_notebook.py** — portable execution using the selected Python environment, followed by verification.
 - **scripts/verify_submission.py** — independent checks of exported artifacts, provenance, candidate/prompt controls, dependencies, and credential leakage.
 - **scripts/test_runtime_paths.py** — cache, retry, partial-generation, and review-note regression checks using fake clients and temporary files.
-- **scripts/build_report.py** and **requirements-report.txt** — optional report reconstruction from saved results.
 - **AUDIT.md** — requirement-by-requirement readiness review; not the submission report.
 
 ## Run
