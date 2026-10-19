@@ -8,14 +8,21 @@ GitHub publication.
 
 **Result: all implementation requirements are covered and the current experiment
 passes execution and independent verification. No unresolved implementation blocker
-was found. A three-page report is prepared in PDF, editable Word, and Markdown formats,
+was found. A three-page report is prepared in PDF, editable LaTeX, Word, and Markdown formats,
 and the project is published to the repository below. The report still needs the
 student's own-word revision to satisfy the assignment's authenticity requirement.**
 
 Repository: https://github.com/varunpatil5050/rag-baseline-vs-reranking
 
-Report: output/pdf/RAG_Comparison_Report.pdf. Editable version:
-output/docx/RAG_Comparison_Report.docx. Readable text: REPORT.md.
+Designed LaTeX report: output/pdf/RAG_Comparison_Report_LaTeX.pdf. Editable source:
+output/latex/RAG_Comparison_Report.tex. Original PDF: output/pdf/RAG_Comparison_Report.pdf.
+Word version: output/docx/RAG_Comparison_Report.docx. Readable text: REPORT.md.
+
+The LaTeX design was reviewed on 19 October 2026. The standalone source compiles in
+the built-in editor. All three exported pages were visually inspected, with no clipping,
+overlap, or table alignment issues. Six complete saved answers, three exact questions,
+the four analysis topics, five latency rows, and six unique links were checked.
+results/latex_report_verification.json records this version's content and file hashes.
 
 ## Requirement traceability
 
