@@ -1,26 +1,26 @@
 {
   "status": "passed",
-  "verified_utc": "2026-10-19T10:27:53.639211+00:00",
+  "verified_utc": "2026-10-19T10:34:42.574923+00:00",
   "native_editor_compilation": "success",
-  "pdf_pages": 5,
+  "pdf_pages": 6,
   "standalone_source": true,
   "exact_questions": 3,
   "complete_saved_answers": 6,
   "required_analysis_topics": 4,
   "current_latency_rows": 5,
   "unique_links": 6,
-  "visual_review": "All five final rendered pages inspected; failure labels, exact source excerpts, answer prose, complete latency table, and final scaling/takeaway/reference section passed.",
+  "visual_review": "All six final rendered pages inspected; expanded title spacing, preserved name/number/logo, requested abstract, complete case answer pairs, latency table, and scaling/takeaway/references passed.",
   "compiler_layout_warnings": 1,
   "credential_scan": "No configured credential in source or extracted PDF text.",
   "comparison_normalization": "Running headers/footers removed; Unicode ligatures, quotes, whitespace, automatic line hyphens, and Markdown/list bullets normalized.",
   "artifact_sha256": {
-    "output/latex/RAG_Comparison_Report.tex": "1d3a2a31457b0ea564d4f9073deaea2460068f5016e78a68d123cea8bd88ab3f",
-    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "2ae37c7c433636972e8c75e9b5d96575e173ec7ccaf7ee51681638770dda76e2"
+    "output/latex/RAG_Comparison_Report.tex": "cad1fc665fe334619b8142d18e032cd96b802fdd215f4696281276b10d42ac95",
+    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "9c8d7800486adc5f3f7edfe7f09ac0b1a49d81d612a54a381c758106b8380a09"
   },
   "compiler_overfull_boxes": 0,
   "compiler_warning_detail": "One underfull paragraph-spacing warning, visually reviewed. The embedded logo causes the export driver to stop at six passes; no unresolved references or overfull text.",
   "cover_pages": 0,
-  "body_pages": 5,
+  "body_pages": 6,
   "external_links": 6,
   "internal_links": 0,
   "first_page_identity": {
@@ -28,11 +28,15 @@
     "roll_number": "2025204013"
   },
   "contents_present": false,
-  "abstract_present": false,
+  "abstract_present": true,
   "first_page_contains_main_text": true,
   "source_excerpts_verified": 3,
   "explicit_failure_types": 3,
   "closing_takeaway_verified": true,
   "protected_answers_unchanged": true,
-  "final_section_kept_together": true
+  "final_section_kept_together": true,
+  "abstract_text_verified": true,
+  "roll_number_label_present": false,
+  "title_spacing_verified": true,
+  "recovery_case_pairs_kept_together": 3
 }

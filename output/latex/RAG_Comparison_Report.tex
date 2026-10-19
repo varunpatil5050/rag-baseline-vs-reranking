@@ -4077,25 +4077,30 @@ startxref
 \newcommand{\sourceevidence}[1]{\par\addvspace{6pt}{\fontsize{10.5}{14.5}\selectfont\textbf{Source excerpt [1].} \textit{``#1''}\par}}
 \begin{document}
 \fontsize{11}{15.2}\selectfont\color{ink}
+\vspace*{7pt}
 \noindent\begin{minipage}[c]{0.74\linewidth}
 \kicker{RAG assignment report / 19 October 2026}
-\vspace{10pt}
+\vspace{16pt}
 {\rmfamily\bfseries\fontsize{31}{35}\selectfont\color{heading}Baseline Retrieval\par
+\vspace{8pt}
 and Reranking}\par
 \end{minipage}\hfill
 \begin{minipage}[c]{0.22\linewidth}
 \raggedleft\includegraphics[width=32mm]{\jobname-iiith-logo-5cbbbb6d.pdf}
-\end{minipage}\par\vspace{7pt}
-{\sffamily\fontsize{13}{17}\selectfont\color{muted}Dense retrieval and Cross-Encoder evidence selection}\par\vspace{11pt}
+\end{minipage}\par\vspace{14pt}
+{\sffamily\fontsize{13}{17}\selectfont\color{muted}Dense retrieval and Cross-Encoder evidence selection}\par\vspace{14pt}
 {\color{accent}\hrule height 0.6pt}\par\vspace{8pt}
 \noindent\begin{minipage}[t]{0.61\linewidth}
-\sffamily\fontsize{10}{14}\selectfont\textbf{Varun Patil}\quad\color{muted}Roll No.\ 2025204013
+\sffamily\fontsize{10}{14}\selectfont\textbf{Varun Patil}\quad\color{muted}2025204013
 \end{minipage}\hfill
 \begin{minipage}[t]{0.35\linewidth}
 \raggedleft\sffamily\fontsize{10}{14}\selectfont
 \href{https://github.com/varunpatil5050/rag-baseline-vs-reranking}{Code and saved results}
 \end{minipage}\par
-{\fontsize{9.5}{13}\selectfont\color{muted}Source: NIST SP 800-63B-4, final July 2025 [1].\par}
+\par\addvspace{17pt}
+\kicker{Abstract}
+\vspace{5pt}
+Cross-Encoder reranking restored decisive evidence for three selected questions that baseline retrieval could not answer from its first three chunks. The experiment uses NIST SP 800-63B-4, \emph{Digital Identity Guidelines: Authentication and Authenticator Management}, final July 2025 [1]. Two controls show why an improved rank need not improve an answer, and why missing candidates limit reranking.
 \section{Architecture comparison}\label{sec:architecture}
 The 129-page PDF yields \textbf{409 chunks} from PDF pages 12--129, excluding front matter. Each page is divided into 180-token windows with 40-token overlap. Both pipelines use this same corpus. The Bi-Encoder, \texttt{all-MiniLM-L6-v2}, embeds chunks and queries independently [2]. Chunk embeddings are precomputed; both query and chunk vectors are normalized. Exact FAISS inner-product search is therefore equivalent to cosine similarity.
 
@@ -4119,6 +4124,7 @@ The provided excerpts do not establish whether a failed-attempt counter can star
 \answerlabel{Answer 2: Reranked}
 No. Generating a new authentication secret SHALL NOT reset the failed authentication count [p033\_c02, p033\_c03].
 \note{Baseline returned recovery-code material rather than the counter restriction. Reranking changes an explicit abstention into a supported answer; it does not correct a fabricated reset rule.}
+\clearpage
 \casetitle{D28}{Reusing biometric samples}{Rank 5 $\rightarrow$ 2}
 \failuretype{Document-specific permission}
 \question{Can face images collected during sign-in be reused to improve the matching template or for research, and what permission is needed?}
@@ -4139,6 +4145,7 @@ Regarding permission:
 
 Additionally, the samples and any derived biometric data SHALL be erased immediately after adaptation or research data has been derived, and an allowable time limit for adaptation SHALL be established and enforced by the authenticator or CSP [p045\_c01].
 \note{Baseline lacked the reuse and consent clause. Reranking restores local use and explicit subscriber consent for other research. The provision does not state that template adaptation needs consent; this does not establish an exemption from all other applicable consent requirements.}
+\clearpage
 \casetitle{D34}{Sending a postal recovery notice}{Rank 6 $\rightarrow$ 1}
 \failuretype{Exception and corner case}
 \question{If the only electronic notification address was also used to receive a recovery code, can the provider skip sending a postal recovery notice?}

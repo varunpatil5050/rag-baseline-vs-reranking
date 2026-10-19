@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "verified_utc": "2026-10-19T10:27:57.496507+00:00",
+  "verified_utc": "2026-10-19T10:34:54.693823+00:00",
   "evaluation_mode": "selected",
   "executed_notebook_code_cells": 10,
   "source_hash_verified": true,
@@ -103,7 +103,7 @@
     "results/rankings.csv": "432824020f2794106a564b907a7e3e5cfe2aa9be9bd5f2caf5b4b6d1766eb175",
     "results/notebook_checks.json": "5c10be15720d09443cbb7f99ed704c10eeffbc41fe6ed01166f5ea5a8b02931d",
     "results/discovery_results.json": "cc679ea991ca9fbd41cb0c78f30b5be8bb25bc4605b25ba65878aea965ce7d62",
-    "results/latex_report_verification.json": "d6044cc351f13f40eaa6c8f26ecaf301fb329e0670ee281b10bded7b81d4fbeb",
+    "results/latex_report_verification.json": "5fdab742c46caeb91896b45fe12094dfc9cbb9c3f1a41e0685524f7db3457530",
     "results/embeddings.npy": "cee51db421cf3ca7e6b54892271498e412209582f893e392d70c23f9baef56a3",
     "results/observations.json": "3000eb827311879f6d2def173d4b2f4ca0fe07179d563ece82c78fac44b73a51",
     "results/latency_samples.csv": "7b51e781427e844323aca60bbfc4dba056ef715fe585aad792fc0a8e3a6e3b19",

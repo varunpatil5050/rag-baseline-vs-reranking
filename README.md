@@ -21,7 +21,8 @@ change the report's AI-assisted provenance.
 
 The LaTeX version is a standalone source with no external images or data files.
 Open it in the built-in LaTeX editor for an editable source and live PDF preview,
-then export the compiled PDF. Its five-page layout uses reference-matched typography,
+then export the compiled PDF. Its six-page layout uses reference-matched typography,
+an opening abstract and spacious title,
 all six recovery-case answers, explicit failure types, three exact NIST excerpts,
 rank shifts, the latency table, a closing takeaway, and linked references.
 results/latex_report_verification.json records its content checks and file hashes.

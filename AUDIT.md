@@ -20,13 +20,16 @@ output/latex/RAG_Comparison_Report.tex. Original PDF: output/pdf/RAG_Comparison_
 Word version: output/docx/RAG_Comparison_Report.docx. Readable text: REPORT.md.
 
 The LaTeX design was reviewed on 19 October 2026. The standalone source compiles in
-the built-in editor. All five exported pages were visually inspected, with no clipping,
+the built-in editor. All six exported pages were visually inspected, with no clipping,
 overlap, or table alignment issues. Six complete saved answers, three exact questions,
 the four analysis topics, five latency rows, and six unique links were checked.
 The final revision also labels all three failure types, reproduces the decisive NIST
 sentences separately from model answers, and adds a takeaway connecting the selected
 recoveries, reranking cost, and the Top-10 recall limit. Source excerpts and recorded
 model answers remain exact.
+The title has additional spacing, the first page includes the requested abstract,
+and each recovery case's two answers are kept together. The name, student number,
+and original IIITH logo are preserved; the literal "Roll No." label is removed.
 results/latex_report_verification.json records this version's content and file hashes.
 
 ## Requirement traceability
