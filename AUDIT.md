@@ -30,6 +30,9 @@ model answers remain exact.
 The title has additional spacing, the first page includes the requested abstract,
 and each recovery case's two answers are kept together. The name, student number,
 and original IIITH logo are preserved; the literal "Roll No." label is removed.
+As requested, 16 minor spelling and grammatical errors are distributed through the
+explanatory prose across all six pages. These language edits leave source quotations,
+saved model answers, technical identifiers, and measurements unchanged.
 results/latex_report_verification.json records this version's content and file hashes.
 
 ## Requirement traceability

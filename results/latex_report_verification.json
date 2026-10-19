@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "verified_utc": "2026-10-19T10:34:42.574923+00:00",
+  "verified_utc": "2026-10-19T10:56:42.942414+00:00",
   "native_editor_compilation": "success",
   "pdf_pages": 6,
   "standalone_source": true,
@@ -9,16 +9,16 @@
   "required_analysis_topics": 4,
   "current_latency_rows": 5,
   "unique_links": 6,
-  "visual_review": "All six final rendered pages inspected; expanded title spacing, preserved name/number/logo, requested abstract, complete case answer pairs, latency table, and scaling/takeaway/references passed.",
-  "compiler_layout_warnings": 1,
+  "visual_review": "All six final pages visually inspected after the requested language edits; title, identity, logo, case answer pairs, table, pagination, and references passed.",
+  "compiler_layout_warnings": 0,
   "credential_scan": "No configured credential in source or extracted PDF text.",
   "comparison_normalization": "Running headers/footers removed; Unicode ligatures, quotes, whitespace, automatic line hyphens, and Markdown/list bullets normalized.",
   "artifact_sha256": {
-    "output/latex/RAG_Comparison_Report.tex": "cad1fc665fe334619b8142d18e032cd96b802fdd215f4696281276b10d42ac95",
-    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "9c8d7800486adc5f3f7edfe7f09ac0b1a49d81d612a54a381c758106b8380a09"
+    "output/latex/RAG_Comparison_Report.tex": "b8d0bd483b068839edfce97f6a18640cb0c65af081c20d4da0527ff3c5450b80",
+    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "27f0891606301b16073b4aa8ec372994846a33e655dd629c29b26c3024849a81"
   },
   "compiler_overfull_boxes": 0,
-  "compiler_warning_detail": "One underfull paragraph-spacing warning, visually reviewed. The embedded logo causes the export driver to stop at six passes; no unresolved references or overfull text.",
+  "compiler_warning_detail": "No underfull or overfull layout warnings. The embedded logo causes the export driver to stop at six passes; no unresolved references.",
   "cover_pages": 0,
   "body_pages": 6,
   "external_links": 6,
@@ -38,5 +38,9 @@
   "abstract_text_verified": true,
   "roll_number_label_present": false,
   "title_spacing_verified": true,
-  "recovery_case_pairs_kept_together": 3
+  "recovery_case_pairs_kept_together": 3,
+  "intentional_language_errors": 16,
+  "intentional_language_error_pages": 6,
+  "intentional_language_error_scope": "Explanatory prose only; requested minor spelling and grammatical errors distributed across abstract, architecture, qualitative analysis, all three case interpretations, latency, scaling, and takeaway.",
+  "abstract_language_edits": "Two intentional spelling/grammar changes requested by the user."
 }

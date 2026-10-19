@@ -4100,9 +4100,9 @@ and Reranking}\par
 \par\addvspace{17pt}
 \kicker{Abstract}
 \vspace{5pt}
-Cross-Encoder reranking restored decisive evidence for three selected questions that baseline retrieval could not answer from its first three chunks. The experiment uses NIST SP 800-63B-4, \emph{Digital Identity Guidelines: Authentication and Authenticator Management}, final July 2025 [1]. Two controls show why an improved rank need not improve an answer, and why missing candidates limit reranking.
+Cross-Encoder reranking restored decisive evidance for three selected questions that baseline retrieval could not answer from its first three chunks. The experiment uses NIST SP 800-63B-4, \emph{Digital Identity Guidelines: Authentication and Authenticator Management}, final July 2025 [1]. Two controls shows why an improved rank need not improve an answer, and why missing candidates limit reranking.
 \section{Architecture comparison}\label{sec:architecture}
-The 129-page PDF yields \textbf{409 chunks} from PDF pages 12--129, excluding front matter. Each page is divided into 180-token windows with 40-token overlap. Both pipelines use this same corpus. The Bi-Encoder, \texttt{all-MiniLM-L6-v2}, embeds chunks and queries independently [2]. Chunk embeddings are precomputed; both query and chunk vectors are normalized. Exact FAISS inner-product search is therefore equivalent to cosine similarity.
+The 129-page PDF yields \textbf{409 chunks} from PDF pages 12--129, excluding front matter. Each page is divided into 180-token windows with 40-token overlap. Both pipelines uses this same corpus. The Bi-Encoder, \texttt{all-MiniLM-L6-v2}, embeds chunks and queries independantly [2]. Chunk embeddings are precomputed; both query and chunk vectors are normalized. Exact FAISS inner-product search is therefore equivalent to cosine similarity.
 
 \smallhead{Two retrieval paths}
 \noindent\textbf{Baseline:} query embedding $\rightarrow$ Top~10 search $\rightarrow$ original Top~3 $\rightarrow$ Gemini.\par
@@ -4113,7 +4113,7 @@ Baseline supplies the original first three candidates to Gemini. The Cross-Encod
 
 Both answers use \texttt{gemini-3.8-flash}, temperature~0, seed~42, and the same evidence-and-citation prompt template [5]. Only the selected excerpts change. These settings do not guarantee deterministic generation.
 \section{Qualitative and rank shift analysis}\label{sec:qualitative}
-Five cases were selected from 44 exploratory queries. The three recoveries were checked for equivalent evidence across the full baseline context. They are selected stress tests, not an estimate of average accuracy. The six answers below are reproduced in three pairs.
+Five cases was selected from 44 exploratory queries. The three recoveries were checked for equivalent evidence across the full baseline context. They are selected stress tests, not an estimate of average accuracy. The six answers below are reproduced in three pairs.
 \casetitle{D10}{Resetting failed attempts}{Rank 4 $\rightarrow$ 1}
 \failuretype{Negation and constraints}
 \question{When a user requests a fresh out-of-band verification code, can the failed-attempt counter start over?}
@@ -4123,7 +4123,7 @@ Five cases were selected from 44 exploratory queries. The three recoveries were 
 The provided excerpts do not establish whether a failed-attempt counter can start over when a user requests a fresh out-of-band verification code. The excerpts discuss out-of-band authenticators and recovery code requirements, including validity periods, format, and throttling under Sec. 3.2.2 [p059\_c03, p031\_c04, p059\_c02], but they completely lack any mention of a failed-attempt counter or the conditions under which it may be reset.
 \answerlabel{Answer 2: Reranked}
 No. Generating a new authentication secret SHALL NOT reset the failed authentication count [p033\_c02, p033\_c03].
-\note{Baseline returned recovery-code material rather than the counter restriction. Reranking changes an explicit abstention into a supported answer; it does not correct a fabricated reset rule.}
+\note{Baseline returned recovery-code material rather than the counter restricton. Reranking changes an explicit abstention into a supported answer; it does not correct a fabricated reset rule.}
 \clearpage
 \casetitle{D28}{Reusing biometric samples}{Rank 5 $\rightarrow$ 2}
 \failuretype{Document-specific permission}
@@ -4144,7 +4144,7 @@ Regarding permission:
 \end{itemize}
 
 Additionally, the samples and any derived biometric data SHALL be erased immediately after adaptation or research data has been derived, and an allowable time limit for adaptation SHALL be established and enforced by the authenticator or CSP [p045\_c01].
-\note{Baseline lacked the reuse and consent clause. Reranking restores local use and explicit subscriber consent for other research. The provision does not state that template adaptation needs consent; this does not establish an exemption from all other applicable consent requirements.}
+\note{Baseline lack the reuse and consent clause. Reranking restores local use and explicit subscriber consent for other reserach. The provision does not state that template adaptation needs consent; this does not establish an exemption from all other applicable consent requirements.}
 \clearpage
 \casetitle{D34}{Sending a postal recovery notice}{Rank 6 $\rightarrow$ 1}
 \failuretype{Exception and corner case}
@@ -4157,14 +4157,14 @@ The provided excerpts do not establish the answer. They do not contain any infor
 No, the provider cannot skip sending a postal recovery notice [p063\_c02].
 
 According to the excerpt, account recovery notifications SHALL also be sent to a postal address if the only other notification address in the subscriber account is the address to which an issued recovery code was sent [p063\_c02].
-\note{Baseline covers recovery-code delivery, omitting the notification exception. Reranking restores the separate postal-notice obligation when the only other notification address received the issued recovery code.}
+\note{Baseline cover recovery-code delivery, omitting the notification exception. Reranking restores the seperate postal-notice obligation when the only other notification address received the issued recovery code.}
 \smallhead{Controls and retrieval limits}
 \textbf{D03 / equivalent evidence.} The AAL3 prohibition for cloud-synced passkeys, \chunk{p020\_c01} (PDF~20, printed~9, section~2.3.2), moves from rank~4 to~2. But baseline rank~2 already contains equivalent evidence in \chunk{p103\_c02} (PDF~103, printed~92). Both answers correctly reject synced passkeys at AAL3. This is not a failure recovery.
 
 \textbf{D05 / candidate recall.} The voice-biometric prohibition in \chunk{p043\_c04} (PDF~43, printed~32, section~3.2.3.2) is absent from the initial Top~10. Baseline incorrectly permits voice biometrics under general biometric conditions; the reranked answer abstains. This avoids unsupported permission without recovering the missing rule. Full control answers and candidate lists remain in the notebook and results.
 \Needspace{25\baselineskip}
 \section{Latency profiling}\label{sec:latency}
-Each query has one warm-up and seven measured repetitions: \textbf{35 samples}. The run uses Python~3.12.3 on an ARM64 Mac with macOS~26.6.2, CPU inference, and one thread each for Torch and FAISS. Table~1 reports medians from \texttt{results/latency\_summary.csv}.
+Each query has one warm-up and seven measured repetitons: \textbf{35 samples}. The run uses Python~3.12.3 on an ARM64 Mac with macOS~26.6.2, CPU inference, and one thread each for Torch and FAISS. Table~1 reports medians from \texttt{results/latency\_summary.csv}.
 \par\addvspace{8pt}
 \Needspace{14\baselineskip}
 \kicker{Table 1 / Retrieval latency}
@@ -4187,12 +4187,12 @@ D05 & 4.85 & 133.90 & 138.65 & 28.60$\times$\\
 \end{center}
 Baseline includes query embedding, vector search, and candidate construction. The reranking increment includes pair validation, tokenization, inference, sorting, and result construction. Advanced total adds both stages \emph{within each repetition}; separate medians need not sum exactly.
 
-Advanced retrieval takes about \textbf{27.5--28.6 times as long} here. Seven samples offer limited precision. The latest run recomputed retrieval and timings but reused all ten earlier Gemini responses from an exact prompt/model/configuration cache, with \textbf{zero fresh API answers}. Original response timestamps are retained in \texttt{results/answers.json}.
+Advanced retrieval takes about \textbf{27.5--28.6 times as long} here. Seven samples offers limited precision. The latest run recomputed retrieval and timings but reused all ten earlier Gemini responses from an exact prompt/model/configuration cache, with \textbf{zero fresh API answers}. Original response timestamps are retained in \texttt{results/answers.json}.
 \Needspace{28\baselineskip}
 \section{Why reranking follows retrieval}\label{sec:scaling}
-A Cross-Encoder must jointly process every query--chunk pair. Scoring the whole corpus would require \textbf{409 pairs rather than ten}: 40.9 times as many pairs, \emph{not} a measured 40.9-fold latency increase. Bi-Encoder document vectors are reused across queries; the vector store restricts expensive joint scoring to ten candidates. This implementation uses exact FAISS search, rather than approximate search.
+A Cross-Encoder must jointly process every query--chunk pair. Scoring the whole corpus would require \textbf{409 pairs rather than ten}: 40.9 times as many pairs, \emph{not} a measured 40.9-fold latency increase. Bi-Encoder document vectors are reused across queries; the vector store restricts expensive joint scorring to ten candidates. This implementation uses exact FAISS search, rather than approximate search.
 
-Pair counts grow with the collection. D05 exposes the trade-off: an initial retrieval miss prevents reranking from restoring the absent rule. Reranking improves selection only within the candidates it receives.
+Pair counts grows with the collection. D05 exposes the trade-off: an initial retrieval miss prevents reranking from restoring the absent rule. Reranking improves selection only within the candidates it receives.
 \smallhead{Overall takeaway}
 Across the three selected recovery cases, reranking restored the missing rule and changed an abstention into a supported answer. These examples shows the benefit of better evidence selection, while the median reranking increment across all five cases was about 125--134 ms per query. The D05 control also shows that reranking cannot repair an initial Top~10 miss, so first-stage retrival quality still matters.
 \smallhead{References}
