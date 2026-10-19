@@ -4,6 +4,13 @@ A controlled comparison over one complex PDF, implemented in a single commented 
 
 [GitHub repository](https://github.com/varunpatil5050/rag-baseline-vs-reranking)
 
+## Jupyter notebook
+
+The complete assignment implementation is included in one well-commented Jupyter
+notebook: **[RAG_Baseline_vs_Reranking.ipynb](RAG_Baseline_vs_Reranking.ipynb)**.
+It contains both retrieval pipelines, paired Gemini answers, rank comparisons,
+latency measurements, and saved execution outputs.
+
 ## Report
 
 - [LaTeX report (PDF)](output/pdf/RAG_Comparison_Report_LaTeX.pdf)
@@ -40,7 +47,7 @@ Preserve your own revisions before rebuilding, because generated report files ar
 
 ## Files
 
-- **RAG_Baseline_vs_Reranking.ipynb** — extraction, chunking, dense search, re-ranking, evidence, latency, and paired Gemini answers.
+- **[RAG_Baseline_vs_Reranking.ipynb](RAG_Baseline_vs_Reranking.ipynb)** — extraction, chunking, dense search, re-ranking, evidence, latency, and paired Gemini answers.
 - **data/NIST.SP.800-63B-4.pdf** — the single source PDF.
 - **data/source_metadata.json** — source, edition, page count, and SHA-256.
 - **data/model_metadata.json** — pinned Hugging Face revisions.
