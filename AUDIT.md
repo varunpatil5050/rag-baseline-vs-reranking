@@ -8,9 +8,10 @@ GitHub publication.
 
 **Result: all implementation requirements are covered and the current experiment
 passes execution and independent verification. No unresolved implementation blocker
-was found. A three-page report is prepared in PDF, editable LaTeX, Word, and Markdown formats,
-and the project is published to the repository below. The report still needs the
-student's own-word revision to satisfy the assignment's authenticity requirement.**
+was found. The report is prepared in PDF, editable LaTeX, Word, and Markdown formats,
+and the project is published to the repository below. The current narrative is
+AI-assisted; the assignment's requirement for independently student-authored,
+non-AI-generated analysis remains unresolved.**
 
 Repository: https://github.com/varunpatil5050/rag-baseline-vs-reranking
 
@@ -19,9 +20,13 @@ output/latex/RAG_Comparison_Report.tex. Original PDF: output/pdf/RAG_Comparison_
 Word version: output/docx/RAG_Comparison_Report.docx. Readable text: REPORT.md.
 
 The LaTeX design was reviewed on 19 October 2026. The standalone source compiles in
-the built-in editor. All three exported pages were visually inspected, with no clipping,
+the built-in editor. All five exported pages were visually inspected, with no clipping,
 overlap, or table alignment issues. Six complete saved answers, three exact questions,
 the four analysis topics, five latency rows, and six unique links were checked.
+The final revision also labels all three failure types, reproduces the decisive NIST
+sentences separately from model answers, and adds a takeaway connecting the selected
+recoveries, reranking cost, and the Top-10 recall limit. Source excerpts and recorded
+model answers remain exact.
 results/latex_report_verification.json records this version's content and file hashes.
 
 ## Requirement traceability
@@ -43,7 +48,7 @@ results/latex_report_verification.json records this version's content and file h
 | Well-commented notebook preferred | All retrieval, generation, and evaluation implementation in one executed notebook; separate optional execution/verification tools | Pass |
 | Architecture/scaling report inputs | Prepared report covers architecture, case comparisons, latency, and scaling | Prepared |
 | Public/shared GitHub code and submitted link | Public repository linked above contains the notebook, all project code, source PDF, saved evidence, and report artifacts | Published |
-| Concise report in student's own words | Complete report is prepared with AI assistance; student must verify and revise its wording before submission | Own-word revision required |
+| Concise report in student's own words | Provided narrative is AI-assisted; the student must independently write and verify the explanatory analysis | Student authorship required |
 
 ## Evidence cases
 
@@ -123,7 +128,7 @@ environment; future API responses and timing measurements can vary.
 
 ## Report and publication checks
 
-- All three report pages were rendered and visually inspected. Body text is 11 pt,
+- All three original Word/PDF report pages were rendered and visually inspected. Body text is 11 pt,
   the timing table is readable, and there is no clipping, overlap, or broken pagination.
 - All three exact questions and six full generated answers match the saved experiment
   across Markdown, Word, and PDF after whitespace and bullet-presentation normalization.
@@ -136,6 +141,6 @@ environment; future API responses and timing measurements can vary.
   assignment brief are excluded. Local computer paths were removed from two harmless
   notebook progress warnings before publication.
 
-The deadline in the assignment is **19 October 2026**. Before submitting, revise the
-prepared report into your own words, verify your understanding, and submit the report
-and repository link.
+The deadline in the assignment is **19 October 2026**. Before submitting, independently
+write the explanatory analysis, verify your understanding, and submit the report and
+repository link.

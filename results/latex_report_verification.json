@@ -1,20 +1,38 @@
 {
   "status": "passed",
-  "verified_utc": "2026-10-19T09:25:38.393284+00:00",
+  "verified_utc": "2026-10-19T10:27:53.639211+00:00",
   "native_editor_compilation": "success",
-  "pdf_pages": 3,
+  "pdf_pages": 5,
   "standalone_source": true,
   "exact_questions": 3,
   "complete_saved_answers": 6,
   "required_analysis_topics": 4,
   "current_latency_rows": 5,
   "unique_links": 6,
-  "visual_review": "All three final rendered pages inspected; typography, diagram, table, spacing, and pagination passed.",
-  "compiler_layout_warnings": 0,
+  "visual_review": "All five final rendered pages inspected; failure labels, exact source excerpts, answer prose, complete latency table, and final scaling/takeaway/reference section passed.",
+  "compiler_layout_warnings": 1,
   "credential_scan": "No configured credential in source or extracted PDF text.",
-  "comparison_normalization": "Unicode ligatures, whitespace, automatic line hyphens, and Markdown/list bullets normalized.",
+  "comparison_normalization": "Running headers/footers removed; Unicode ligatures, quotes, whitespace, automatic line hyphens, and Markdown/list bullets normalized.",
   "artifact_sha256": {
-    "output/latex/RAG_Comparison_Report.tex": "380e2103fbce4b6fb85399e74faef727f06473c0d211adcc45cc6d7a4b30f8cc",
-    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "3216197ca42848777f1e3f9c5ca5ec16934bbcb235807f4618cdf3bbfa66b34d"
-  }
+    "output/latex/RAG_Comparison_Report.tex": "1d3a2a31457b0ea564d4f9073deaea2460068f5016e78a68d123cea8bd88ab3f",
+    "output/pdf/RAG_Comparison_Report_LaTeX.pdf": "2ae37c7c433636972e8c75e9b5d96575e173ec7ccaf7ee51681638770dda76e2"
+  },
+  "compiler_overfull_boxes": 0,
+  "compiler_warning_detail": "One underfull paragraph-spacing warning, visually reviewed. The embedded logo causes the export driver to stop at six passes; no unresolved references or overfull text.",
+  "cover_pages": 0,
+  "body_pages": 5,
+  "external_links": 6,
+  "internal_links": 0,
+  "first_page_identity": {
+    "name": "Varun Patil",
+    "roll_number": "2025204013"
+  },
+  "contents_present": false,
+  "abstract_present": false,
+  "first_page_contains_main_text": true,
+  "source_excerpts_verified": 3,
+  "explicit_failure_types": 3,
+  "closing_takeaway_verified": true,
+  "protected_answers_unchanged": true,
+  "final_section_kept_together": true
 }

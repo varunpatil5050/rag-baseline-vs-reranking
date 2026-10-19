@@ -9,19 +9,24 @@ A controlled comparison over one complex PDF, implemented in a single commented 
 - [LaTeX report (PDF)](output/pdf/RAG_Comparison_Report_LaTeX.pdf)
 - [Editable LaTeX source](output/latex/RAG_Comparison_Report.tex)
 - [Original PDF report](output/pdf/RAG_Comparison_Report.pdf)
-- [Editable Word report](output/docx/RAG_Comparison_Report.docx)
-- [Report text](REPORT.md)
+- [Original Word report](output/docx/RAG_Comparison_Report.docx)
+- [Original report text](REPORT.md)
 
 The report covers architecture, three document-specific recovery cases with actual
 answer pairs, measured latency, and scaling. It was prepared with AI assistance.
-The assignment requires the student's own wording; verify and revise the editable
-report before submitting it.
+The assignment explicitly requires non-AI-generated analysis reflecting the student's
+own understanding. Use the saved evidence to write the explanatory narrative
+independently before submission. Formatting or intentional language mistakes do not
+change the report's AI-assisted provenance.
 
 The LaTeX version is a standalone source with no external images or data files.
 Open it in the built-in LaTeX editor for an editable source and live PDF preview,
-then export the compiled PDF. Its three-page layout includes a pipeline diagram,
-all six recovery-case answers, rank shifts, the latency table, and linked references.
+then export the compiled PDF. Its five-page layout uses reference-matched typography,
+all six recovery-case answers, explicit failure types, three exact NIST excerpts,
+rank shifts, the latency table, a closing takeaway, and linked references.
 results/latex_report_verification.json records its content checks and file hashes.
+The LaTeX/PDF pair is the current report presentation; the earlier Word and Markdown
+versions are retained for reference.
 
 The optional Word/Markdown report builder reads the saved experiment without calling Gemini:
 
